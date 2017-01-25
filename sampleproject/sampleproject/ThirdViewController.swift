@@ -10,12 +10,18 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    @IBOutlet var orgn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func orgn1(_ sender: UIButton) {
+        if let navController = self.navigationController {
+            navController.popToRootViewController(animated: true)}
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

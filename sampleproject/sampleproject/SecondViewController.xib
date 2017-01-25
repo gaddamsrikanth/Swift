@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
                 <outlet property="Back" destination="X4p-6q-bAc" id="2X3-n8-Sau"/>
+                <outlet property="nxt" destination="iWz-Sa-sUY" id="2fx-ze-YLc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,6 +27,14 @@
                     <state key="normal" title="Back"/>
                     <connections>
                         <action selector="bck:" destination="-1" eventType="touchDown" id="IO3-bP-XuQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWz-Sa-sUY">
+                    <rect key="frame" x="154" y="341" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextwind:" destination="-1" eventType="touchDown" id="9XP-ZD-Bt7"/>
                     </connections>
                 </button>
             </subviews>
