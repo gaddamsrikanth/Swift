@@ -1,14 +1,14 @@
 //
-//  swiftUITests.swift
-//  swiftUITests
+//  sampleprojectUITests.swift
+//  sampleprojectUITests
 //
-//  Created by Tilak on 25/01/17.
-//  Copyright © 2017 LaNet. All rights reserved.
+//  Created by Developer88 on 1/25/17.
+//  Copyright © 2017 None. All rights reserved.
 //
 
 import XCTest
 
-class swiftUITests: XCTestCase {
+class sampleprojectUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

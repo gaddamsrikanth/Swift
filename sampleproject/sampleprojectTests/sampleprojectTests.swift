@@ -1,15 +1,15 @@
 //
-//  swiftTests.swift
-//  swiftTests
+//  sampleprojectTests.swift
+//  sampleprojectTests
 //
-//  Created by Tilak on 25/01/17.
-//  Copyright © 2017 LaNet. All rights reserved.
+//  Created by Developer88 on 1/25/17.
+//  Copyright © 2017 None. All rights reserved.
 //
 
 import XCTest
-@testable import swift
+@testable import sampleproject
 
-class swiftTests: XCTestCase {
+class sampleprojectTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -28,7 +28,7 @@ class swiftTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
