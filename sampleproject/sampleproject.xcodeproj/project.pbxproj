@@ -14,6 +14,9 @@
 		5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A62B01E388F3B000B36C3 /* LaunchScreen.storyboard */; };
 		5C4A62BD1E388F3C000B36C3 /* sampleprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62BC1E388F3C000B36C3 /* sampleprojectTests.swift */; };
 		5C4A62C81E388F3C000B36C3 /* sampleprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62C71E388F3C000B36C3 /* sampleprojectUITests.swift */; };
+		5C4A62D61E3891DD000B36C3 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A62D51E3891DD000B36C3 /* View.xib */; };
+		5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C557BF11E38B59100EA4690 /* SecondViewController.swift */; };
+		5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF21E38B59100EA4690 /* SecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		5C4A62C31E388F3C000B36C3 /* sampleprojectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleprojectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4A62C71E388F3C000B36C3 /* sampleprojectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleprojectUITests.swift; sourceTree = "<group>"; };
 		5C4A62C91E388F3C000B36C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4A62D51E3891DD000B36C3 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		5C557BF11E38B59100EA4690 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5C557BF21E38B59100EA4690 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,13 @@
 			children = (
 				5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */,
 				5C4A62A91E388F3B000B36C3 /* ViewController.swift */,
+				5C4A62D51E3891DD000B36C3 /* View.xib */,
 				5C4A62AB1E388F3B000B36C3 /* Main.storyboard */,
 				5C4A62AE1E388F3B000B36C3 /* Assets.xcassets */,
 				5C4A62B01E388F3B000B36C3 /* LaunchScreen.storyboard */,
 				5C4A62B31E388F3B000B36C3 /* Info.plist */,
+				5C557BF11E38B59100EA4690 /* SecondViewController.swift */,
+				5C557BF21E38B59100EA4690 /* SecondViewController.xib */,
 			);
 			path = sampleproject;
 			sourceTree = "<group>";
@@ -232,9 +241,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4A62D61E3891DD000B36C3 /* View.xib in Resources */,
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
 				5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */,
+				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
 				5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */,
 			);
@@ -505,6 +517,7 @@
 				5C4A62CE1E388F3C000B36C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C4A62CF1E388F3C000B36C3 /* Build configuration list for PBXNativeTarget "sampleprojectTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				5C4A62D11E388F3C000B36C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C4A62D21E388F3C000B36C3 /* Build configuration list for PBXNativeTarget "sampleprojectUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				5C4A62D41E388F3C000B36C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
