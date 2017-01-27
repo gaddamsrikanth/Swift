@@ -117,10 +117,6 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
                 
             }
 
-            /*let p = tableView.indexPathForSelectedRow?.item
-            if p != nil {
-            animals[p!] = textField.text!
-            }*/
             tableView.reloadData()
         }
     }
