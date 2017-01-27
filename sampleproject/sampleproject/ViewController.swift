@@ -74,6 +74,8 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         if(animals.count != 0 ){
         if(textField.text != "")
         {
+            let a = animals.count
+            for _ in (0...a){
             if(animals.contains(textField.text!))
             {
                 print(textField.text!)
@@ -82,6 +84,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
                 tableView.reloadData()
             }
             
+            }
         }
         else{
             if let indexPaths = tableView.indexPathsForSelectedRows  {
