@@ -61,6 +61,8 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         }}
     
     @IBAction func del(_ sender: Any) {
+        
+       
         if(textField.text != "")
         {
             if(animals.contains(textField.text!))
@@ -71,6 +73,13 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
                 tableView.reloadData()
             }
             
+        }
+        else{
+            let p = tableView.indexPathForSelectedRow?.item
+            if p != nil {
+                animals.remove(at: p!)
+                tableView.reloadData()
+            }
         }
     }
     
