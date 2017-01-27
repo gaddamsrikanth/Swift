@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     
     
+    @IBOutlet var updt: UIButton!
     @IBOutlet var del: UIButton!
     @IBOutlet var add: UIButton!
     @IBOutlet var tableView: UITableView!
@@ -83,6 +84,16 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         }
     }
     
+    @IBAction func updt(_ sender: Any) {
+        if(textField.text != "")
+        {
+            let p = tableView.indexPathForSelectedRow?.item
+            if p != nil {
+            animals[p!] = textField.text!
+            }
+            tableView.reloadData()
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

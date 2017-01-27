@@ -16,6 +16,7 @@
                 <outlet property="lbl" destination="hIw-5d-gQt" id="97I-Nd-9S9"/>
                 <outlet property="tableView" destination="ha6-vv-s2t" id="EKI-Ej-Y0o"/>
                 <outlet property="textField" destination="iE4-I7-wwf" id="02h-nA-sRc"/>
+                <outlet property="updt" destination="OrI-sc-e5H" id="fgV-Zq-vgT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c3n-sO-xKy"/>
             </connections>
         </placeholder>
@@ -68,6 +69,14 @@
                     <state key="normal" title="Del"/>
                     <connections>
                         <action selector="del:" destination="-1" eventType="touchDown" id="eWE-0X-I3b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-sc-e5H">
+                    <rect key="frame" x="156" y="219" width="61" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Update"/>
+                    <connections>
+                        <action selector="updt:" destination="-1" eventType="touchDown" id="Ed0-aY-JGz"/>
                     </connections>
                 </button>
             </subviews>
