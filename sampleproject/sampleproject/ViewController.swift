@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     
     
+    @IBOutlet var del: UIButton!
     @IBOutlet var add: UIButton!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
@@ -58,6 +59,22 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         animals.append(textField.text!)
             tableView.reloadData()
         }}
+    
+    @IBAction func del(_ sender: Any) {
+        if(textField.text != "")
+        {
+            if(animals.contains(textField.text!))
+            {
+                print(textField.text!)
+                
+                animals.remove(at: animals.index(of: textField.text!)!)
+                tableView.reloadData()
+            }
+            
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

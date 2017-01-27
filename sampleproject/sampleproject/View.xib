@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
                 <outlet property="add" destination="kUb-XT-0Iu" id="m8w-s1-OF8"/>
+                <outlet property="del" destination="W08-Sj-aXx" id="ruq-2Y-w0Y"/>
                 <outlet property="lbl" destination="hIw-5d-gQt" id="97I-Nd-9S9"/>
                 <outlet property="tableView" destination="ha6-vv-s2t" id="EKI-Ej-Y0o"/>
                 <outlet property="textField" destination="iE4-I7-wwf" id="02h-nA-sRc"/>
@@ -54,11 +55,19 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUb-XT-0Iu">
-                    <rect key="frame" x="164" y="219" width="46" height="30"/>
+                    <rect key="frame" x="51" y="219" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Add"/>
                     <connections>
                         <action selector="added:" destination="-1" eventType="touchDown" id="QE8-XQ-Cfy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W08-Sj-aXx">
+                    <rect key="frame" x="268" y="219" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Del"/>
+                    <connections>
+                        <action selector="del:" destination="-1" eventType="touchDown" id="eWE-0X-I3b"/>
                     </connections>
                 </button>
             </subviews>
