@@ -9,12 +9,13 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    var myString: String?
     @IBOutlet var Back: UIButton!
+    @IBOutlet var label1: UILabel!
     @IBOutlet var nxt: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        label1.text = myString
         // Do any additional setup after loading the view.
     }
     

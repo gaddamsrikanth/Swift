@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
                 <outlet property="Back" destination="X4p-6q-bAc" id="2X3-n8-Sau"/>
+                <outlet property="label1" destination="lBb-aW-LAs" id="Z9V-hz-EGg"/>
                 <outlet property="nxt" destination="iWz-Sa-sUY" id="2fx-ze-YLc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,8 +38,16 @@
                         <action selector="nextwind:" destination="-1" eventType="touchDown" id="9XP-ZD-Bt7"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBb-aW-LAs">
+                    <rect key="frame" x="16" y="231" width="343" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="72.5" y="59.5"/>
         </view>
     </objects>
 </document>
