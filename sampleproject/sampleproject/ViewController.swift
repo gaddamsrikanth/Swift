@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     
     var animals : [String] = ["A","B","C","D"]
@@ -25,13 +25,13 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
     @IBOutlet var lbl: UILabel!
     @IBOutlet var OutButton: UIButton!
     
-    
+    var selected: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self,forCellReuseIdentifier : cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        
+        textField.delegate = self
         if(swtch.isOn)
         {
             tableView.allowsMultipleSelection = true
@@ -53,7 +53,15 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         print("You tapped cell number \(indexPath.row)")
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textView: UITextView){
+        print("ABCD")
+        self.animals[selected!] = self.textField.text!
+        tableView.reloadData()
+    }
     
     @IBAction func txt(_ sender: Any) {
         lbl.text = textField.text
@@ -146,7 +154,9 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: { (action, indexPath) in
             print("Edit tapped")
             tableView.cellForRow(at: indexPath)?.isSelected = true
-            self.textField.becomeFirstResponder()
+            self.textField.text = self.animals[indexPath.item]
+            self.selected = indexPath.item
+            print(indexPath[1])
         })
         editAction.backgroundColor = UIColor.blue
         
@@ -161,4 +171,6 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         tableView.reloadData()
         return [editAction, deleteAction]
     }
+    
+    
 }
