@@ -139,5 +139,26 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
 }
-
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        // action one
+        let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: { (action, indexPath) in
+            print("Edit tapped")
+            tableView.cellForRow(at: indexPath)?.isSelected = true
+            self.textField.becomeFirstResponder()
+        })
+        editAction.backgroundColor = UIColor.blue
+        
+        // action two
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+            print("Delete tapped")
+            self.animals.remove(at: indexPath.item)
+            tableView.reloadData()
+            
+        })
+        deleteAction.backgroundColor = UIColor.red
+        tableView.reloadData()
+        return [editAction, deleteAction]
+    }
 }
