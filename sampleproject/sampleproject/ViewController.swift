@@ -71,8 +71,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         }}
     
     @IBAction func del(_ sender: Any) {
-        
-       
+        if(animals.count != 0 ){
         if(textField.text != "")
         {
             if(animals.contains(textField.text!))
@@ -98,14 +97,30 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
             }
         }
     }
+        else{
+        print("Table does not contain element")
+        }
+    }
+    
     
     @IBAction func updt(_ sender: Any) {
         if(textField.text != "")
         {
-            let p = tableView.indexPathForSelectedRow?.item
+            if let indexPaths = tableView.indexPathsForSelectedRows  {
+                
+                let sortedArray = indexPaths.sorted {$0.row < $1.row}
+                
+                for i in (0...sortedArray.count-1).reversed() {
+                    
+                    animals[sortedArray[i].row] = textField.text!
+                }
+                
+            }
+
+            /*let p = tableView.indexPathForSelectedRow?.item
             if p != nil {
             animals[p!] = textField.text!
-            }
+            }*/
             tableView.reloadData()
         }
     }
