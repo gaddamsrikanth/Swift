@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     
     
+    @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
     @IBOutlet var del: UIButton!
     @IBOutlet var add: UIButton!
@@ -30,6 +31,14 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         self.tableView.register(UITableViewCell.self,forCellReuseIdentifier : cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if(swtch.isOn)
+        {
+            tableView.allowsMultipleSelection = true
+        }
+        else
+        {
+        tableView.allowsMultipleSelection = false}
         // Do any additional setup after loading the view, typically from a nib.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,10 +85,16 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
             
         }
         else{
-            let p = tableView.indexPathForSelectedRow?.item
-            if p != nil {
-                animals.remove(at: p!)
-                tableView.reloadData()
+            if let indexPaths = tableView.indexPathsForSelectedRows  {
+                
+                let sortedArray = indexPaths.sorted {$0.row < $1.row}
+                
+                for i in (0...sortedArray.count-1).reversed() {
+                    
+                    animals.remove(at: sortedArray[i].row)
+                }
+                tableView.deleteRows(at: sortedArray, with: .automatic)
+            
             }
         }
     }
@@ -95,6 +110,17 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource 
         }
     }
     
+    @IBAction func swtch(_ sender: Any) {
+        if(tableView.allowsMultipleSelection == true)
+        {
+            tableView.allowsMultipleSelection = false
+        }
+        else
+        {
+            tableView.allowsMultipleSelection = true
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
