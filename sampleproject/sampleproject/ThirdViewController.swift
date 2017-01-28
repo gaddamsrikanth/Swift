@@ -8,12 +8,23 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet var v1: UIView!
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var orgn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 25)
+        layout.itemSize = CGSize(width: 100, height: 100)
+        
+        collectionView = UICollectionView(frame: self.v1.frame, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.clear
+        self.v1.addSubview(collectionView)
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +37,15 @@ class ThirdViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 21
+    }
     
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
+        cell.backgroundColor = UIColor.red
+        return cell
+    }
 
     /*
     // MARK: - Navigation
