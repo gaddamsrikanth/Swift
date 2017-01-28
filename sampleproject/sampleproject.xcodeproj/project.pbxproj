@@ -19,6 +19,8 @@
 		5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF21E38B59100EA4690 /* SecondViewController.xib */; };
 		5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */; };
 		5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */; };
+		5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD74A1C1E3CC739003C68C1 /* CollectionViewCell.swift */; };
+		5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		5C557BF21E38B59100EA4690 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		5CD74A1C1E3CC739003C68C1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				5C557BF21E38B59100EA4690 /* SecondViewController.xib */,
 				5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */,
 				5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */,
+				5CD74A1C1E3CC739003C68C1 /* CollectionViewCell.swift */,
+				5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */,
 			);
 			path = sampleproject;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C4A62D61E3891DD000B36C3 /* View.xib in Resources */,
+				5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */,
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
@@ -277,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */,
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
 				5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */,
