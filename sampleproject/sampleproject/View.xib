@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
+                <outlet property="add" destination="kUb-XT-0Iu" id="m8w-s1-OF8"/>
+                <outlet property="del" destination="W08-Sj-aXx" id="ruq-2Y-w0Y"/>
+                <outlet property="lbl" destination="hIw-5d-gQt" id="97I-Nd-9S9"/>
+                <outlet property="swtch" destination="zJg-Xa-NwQ" id="UoH-RE-LAr"/>
+                <outlet property="tableView" destination="ha6-vv-s2t" id="EKI-Ej-Y0o"/>
+                <outlet property="textField" destination="iE4-I7-wwf" id="02h-nA-sRc"/>
+                <outlet property="updt" destination="OrI-sc-e5H" id="fgV-Zq-vgT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c3n-sO-xKy"/>
             </connections>
         </placeholder>
@@ -27,8 +34,62 @@
                         <action selector="change:" destination="-1" eventType="touchDown" id="eT4-r4-F6M"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIw-5d-gQt">
+                    <rect key="frame" x="16" y="190" width="343" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-I7-wwf">
+                    <rect key="frame" x="16" y="266" width="343" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="txt:" destination="-1" eventType="editingChanged" id="Z5t-Aj-ac8"/>
+                    </connections>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-vv-s2t">
+                    <rect key="frame" x="59" y="309" width="240" height="338"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUb-XT-0Iu">
+                    <rect key="frame" x="51" y="219" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Add"/>
+                    <connections>
+                        <action selector="added:" destination="-1" eventType="touchDown" id="QE8-XQ-Cfy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W08-Sj-aXx">
+                    <rect key="frame" x="268" y="219" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Del"/>
+                    <connections>
+                        <action selector="del:" destination="-1" eventType="touchDown" id="eWE-0X-I3b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-sc-e5H">
+                    <rect key="frame" x="156" y="219" width="61" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Update"/>
+                    <connections>
+                        <action selector="updt:" destination="-1" eventType="touchDown" id="Ed0-aY-JGz"/>
+                    </connections>
+                </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJg-Xa-NwQ">
+                    <rect key="frame" x="163" y="166" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="swtch:" destination="-1" eventType="valueChanged" id="GOF-ha-c4M"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
 </document>
