@@ -11,7 +11,7 @@ import UIKit
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     
-    var animals : [String] = ["A","B","C","D"]
+    var animals : [String] = ["Apple","Apricot","C","D"]
     let cellReuseIdentifier = "cell"
     var refresh : UIRefreshControl!
     var timer: Timer!
@@ -33,7 +33,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         refresh.backgroundColor = UIColor.red
         refresh.tintColor = UIColor.yellow
         refresh.addTarget(self, action: #selector(ViewController.refresh1(_:)), for: UIControlEvents.valueChanged)
-        self.tableView.register(UITableViewCell.self,forCellReuseIdentifier : cellReuseIdentifier)
+        tableView.register(UINib(nibName:"ViewCell",bundle: nil), forCellReuseIdentifier: "ViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         textField.delegate = self
@@ -50,8 +50,10 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         return self.animals.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
-        cell.textLabel?.text = self.animals[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell", for: indexPath) as! ViewCell
+        let animalName = animals[indexPath.row]
+        cell.lbl1!.text = animalName
+        cell.imgview!.image = UIImage(named: animalName)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -154,7 +156,8 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
 }
     func refresh1(_ sender: AnyObject){
 
-        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(ViewController.time2(_:)), userInfo: nil, repeats: true)
+       /* timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(ViewController.time2(_:)), userInfo: nil, repeats: true)*/
+        time2(self)
     }
     func time2(_ sender: AnyObject){
         tableView.reloadData()
