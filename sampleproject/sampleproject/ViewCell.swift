@@ -10,6 +10,7 @@ import UIKit
 
 class ViewCell: UITableViewCell {
 
+    @IBOutlet var lbl2: UILabel!
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var imgview: UIImageView!
     override func awakeFromNib() {

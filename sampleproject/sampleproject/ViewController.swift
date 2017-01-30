@@ -54,6 +54,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         let animalName = animals[indexPath.row]
         cell.lbl1!.text = animalName
         cell.imgview!.image = UIImage(named: animalName)
+        cell.lbl2!.text = animalName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
