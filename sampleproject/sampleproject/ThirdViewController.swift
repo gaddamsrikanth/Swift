@@ -18,6 +18,7 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     var imageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var orgn: UIButton!
+    @IBOutlet var Next: UIButton!
     
     fileprivate let imageManager = PHCachingImageManager()
     var fetchResult: PHFetchResult<PHAsset>!
@@ -48,6 +49,12 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
 
+    
+    @IBAction func next(_ sender: Any) {
+        let vc = FourthViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     @IBAction func orgn1(_ sender: UIButton) {
         if let navController = self.navigationController {
             navController.popToRootViewController(animated: true)}
