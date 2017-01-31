@@ -11,10 +11,10 @@ import UIKit
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     
-    var animals : [String] = ["A","B","C","D"]
+    var animals : [String] = ["Apple","Apricot","C","D"]
     let cellReuseIdentifier = "cell"
-    
-    
+    var refresh : UIRefreshControl!
+    var timer: Timer!
     
     @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
@@ -28,7 +28,12 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var selected: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self,forCellReuseIdentifier : cellReuseIdentifier)
+        refresh = UIRefreshControl()
+        tableView.addSubview(refresh)
+        refresh.backgroundColor = UIColor.red
+        refresh.tintColor = UIColor.yellow
+        refresh.addTarget(self, action: #selector(ViewController.refresh1(_:)), for: UIControlEvents.valueChanged)
+        tableView.register(UINib(nibName:"ViewCell",bundle: nil), forCellReuseIdentifier: "ViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         textField.delegate = self
@@ -45,8 +50,11 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         return self.animals.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
-        cell.textLabel?.text = self.animals[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell", for: indexPath) as! ViewCell
+        let animalName = animals[indexPath.row]
+        cell.lbl1!.text = animalName
+        cell.imgview!.image = UIImage(named: animalName)
+        cell.lbl2!.text = animalName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -60,7 +68,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     func textFieldDidEndEditing(_ textView: UITextView){
         print("ABCD")
         self.animals[selected!] = self.textField.text!
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     @IBAction func txt(_ sender: Any) {
@@ -75,7 +83,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     @IBAction func added(_ sender: Any) {
         if(textField.text != ""){
         animals.append(textField.text!)
-            tableView.reloadData()
+            //tableView.reloadData()
         }}
     
     @IBAction func del(_ sender: Any) {
@@ -89,7 +97,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
                 print(textField.text!)
                 
                 animals.remove(at: animals.index(of: textField.text!)!)
-                tableView.reloadData()
+                //tableView.reloadData()
             }
             
             }
@@ -128,7 +136,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
                 
             }
 
-            tableView.reloadData()
+            //tableView.reloadData()
         }
     }
     
@@ -147,6 +155,15 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
 }
+    func refresh1(_ sender: AnyObject){
+
+       /* timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(ViewController.time2(_:)), userInfo: nil, repeats: true)*/
+        time2(self)
+    }
+    func time2(_ sender: AnyObject){
+        tableView.reloadData()
+        refresh.endRefreshing()
+    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -164,11 +181,11 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
             print("Delete tapped")
             self.animals.remove(at: indexPath.item)
-            tableView.reloadData()
+            //tableView.reloadData()
             
         })
         deleteAction.backgroundColor = UIColor.red
-        tableView.reloadData()
+        //tableView.reloadData()
         return [editAction, deleteAction]
     }
     
