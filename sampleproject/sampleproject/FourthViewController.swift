@@ -12,6 +12,9 @@ import Foundation
 class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var arrDict :NSMutableArray=[]
+    
+    @IBOutlet var back: UIButton!
+    @IBOutlet var fwd: UIButton!
     @IBOutlet var btn1: UIButton!
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -22,6 +25,21 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
 
+    
+    @IBAction func nxt(_ sender: Any) {
+        let vc = FifthViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func bck(_ sender: Any) {
+        let vc = ThirdViewController()
+        if let nav = self.navigationController {
+        nav.popToViewController(vc, animated: true)
+        }
+        
+    }
+    
     @IBAction func AddContent(_ sender: Any) {
     jsonParsingFromFile()
     }

@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FourthViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
+                <outlet property="back" destination="Mlb-c2-tfh" id="AFf-9z-l1n"/>
                 <outlet property="btn1" destination="tLX-tq-Zkh" id="FFr-hE-u36"/>
+                <outlet property="fwd" destination="wYG-Ni-DhZ" id="I2Z-GY-7Xj"/>
                 <outlet property="tableView" destination="RE2-4l-zyD" id="yVS-js-Rd2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,6 +34,22 @@
                     <state key="normal" title="Add"/>
                     <connections>
                         <action selector="AddContent:" destination="-1" eventType="touchDown" id="wXh-3b-80K"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-Ni-DhZ">
+                    <rect key="frame" x="329" y="67" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nxt:" destination="-1" eventType="touchDown" id="TgR-IQ-Hsc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlb-c2-tfh">
+                    <rect key="frame" x="16" y="67" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="bck:" destination="-1" eventType="touchDown" id="A8e-do-FRL"/>
                     </connections>
                 </button>
             </subviews>
