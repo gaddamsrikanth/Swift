@@ -83,6 +83,14 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     @IBAction func added(_ sender: Any) {
         if(textField.text != ""){
         animals.append(textField.text!)
+            var s: String!
+            do{
+            s = try String(contentsOfFile: Bundle.main.path(forResource: "myFile", ofType: "txt")!)
+            }catch
+            {
+                print("Jaadu")
+            }
+            print(s)
             //tableView.reloadData()
         }}
     

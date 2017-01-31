@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThirdViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
+                <outlet property="Next" destination="Ex7-xM-eNc" id="NDf-yP-KOT"/>
                 <outlet property="collectionView" destination="ZTl-iZ-MaJ" id="682-0o-Xgi"/>
                 <outlet property="orgn" destination="rBR-nR-1Yb" id="gCV-Jj-Abo"/>
                 <outlet property="v1" destination="cqn-og-0pq" id="6Yy-W5-vQI"/>
@@ -37,17 +38,25 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBR-nR-1Yb">
+                            <rect key="frame" x="8" y="0.0" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Origin"/>
+                            <connections>
+                                <action selector="orgn1:" destination="-1" eventType="touchDown" id="Fie-yi-TKu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex7-xM-eNc">
+                            <rect key="frame" x="297" y="0.0" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Next"/>
+                            <connections>
+                                <action selector="next:" destination="-1" eventType="touchDown" id="Jyc-pO-gkH"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBR-nR-1Yb">
-                    <rect key="frame" x="164" y="113" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Origin"/>
-                    <connections>
-                        <action selector="orgn1:" destination="-1" eventType="touchDown" id="Fie-yi-TKu"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>
