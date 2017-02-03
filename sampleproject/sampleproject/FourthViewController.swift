@@ -23,6 +23,16 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+    }
+    
+    func editButtonPressed(){
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing == true{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName:"ViewCell1" ,bundle: nil), forCellReuseIdentifier: "ViewCell1")
