@@ -33,9 +33,8 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func bck(_ sender: Any) {
-        let vc = ThirdViewController()
         if let nav = self.navigationController {
-        nav.popToViewController(vc, animated: true)
+        nav.popViewController(animated: true)
         }
         
     }

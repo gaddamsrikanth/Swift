@@ -11,7 +11,7 @@ import UIKit
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     
-    var animals : [String] = ["Apple","Apricot","C","D"]
+    var animals : [String] = ["Apple","Apricot","food","D"]
     let cellReuseIdentifier = "cell"
     var refresh : UIRefreshControl!
     var timer: Timer!

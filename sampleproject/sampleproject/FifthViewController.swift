@@ -19,22 +19,42 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             super.viewWillAppear(animated)
             
             // Create Tab one
-            let tabOne = TabViewController1()
-            let tabOneBarItem = UITabBarItem(title: "1st Tab", image: nil, tag: 0)
+            let tabOne = ViewController()
+            let tabOneBarItem = UITabBarItem(title: "", image: UIImage(named: "apple"), tag: 0)
+            
+            
             
             tabOne.tabBarItem = tabOneBarItem
             
             
             // Create Tab two
-            let tabTwo = TabViewController2()
-            let tabTwoBarItem2 = UITabBarItem(title: "2nd Tab", image: nil, tag: 1)
+            let tabTwo = SecondViewController()
+            let tabTwoBarItem2 = UITabBarItem(title: "", image: UIImage(named : "fruit"), tag: 1)
+            
             tabTwo.tabBarItem = tabTwoBarItem2
-            self.viewControllers = [tabOne, tabTwo]
+            
+            //Tab 3
+            let tabThree = ThirdViewController()
+            tabThree.tabBarItem = UITabBarItem(title:"",image: UIImage(named : "Images"),tag: 3)
+            
+            //Tab 4
+            let tabFour = FourthViewController()
+            tabFour.tabBarItem = UITabBarItem(title:"tab 4",image: nil,tag: 4)
+            
+            //Tab 5
+            let tabFive = TabViewController1()
+            tabFive.tabBarItem = UITabBarItem(title:"tab5",image: nil,tag:5)
+            
+            //Tab 6
+            
+            let tabSix = SixthViewController()
+            tabSix.tabBarItem = UITabBarItem(title:"tab6",image:nil,tag:6)
+            self.viewControllers = [tabOne, tabTwo, tabThree, tabFour,tabFive,tabSix]
         }
         
         // UITabBarControllerDelegate method
         func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-            print("Selected \(viewController.title!)")
+//            print("Selected \(viewController.title!)")
         }
     }
 
