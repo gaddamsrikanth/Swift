@@ -10,7 +10,11 @@ import UIKit
 import Foundation
 
 class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    var age1: Dictionary<String,[Int]?> = [
+        "Low": [],
+        "Med": [],
+        "High": []
+    ]
     var arrDict :NSMutableArray=[]
     
     @IBOutlet var back: UIButton!
@@ -54,6 +58,27 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         for i in 0  ..< (dict.value(forKey: "person") as! NSArray).count
         {
             arrDict.add((dict.value(forKey: "person") as! NSArray) .object(at: i))
+            let age2 = Int(((arrDict[i] as AnyObject).value(forKey: "age") as? String)!)!
+            var arr: [Int] = []
+            print(age1)
+            if(age2>10 && age2<30)
+            {
+                arr = age1["Low"]!!
+                arr.append(age2)
+                age1["Low"] = arr
+            }
+            else if(age2>30 && age2<70)
+            {
+                arr = age1["Med"]!!
+                arr.append(age2)
+                age1["Med"] = arr
+            }
+            else{
+                arr = age1["High"]!!
+                arr.append(age2)
+                age1["High"] = arr
+            }
+
         }
 
         print(arrDict)
@@ -64,10 +89,6 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(arrDict.count)
-        return arrDict.count
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
@@ -76,12 +97,37 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell1") as! ViewCell1
         let strTitle : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "name") as! NSString
-        let strDescription : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "age") as! NSString
         let img : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "image") as! NSString
+        
+        let key = Array(age1.keys)[indexPath.section]
+        let array1 = age1[key]!!
+        
         cell.label1.text=strTitle as String
-        cell.label2.text=strDescription as String
+        cell.label2.text=String(describing: array1[indexPath.row])
         cell.imgvw.image = UIImage(named: img as String)
         return cell as ViewCell1
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    let key = Array(age1.keys)[section]
+        return key
+        
+    }
+    
+
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return age1.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        
+        let key = Array(age1.keys)[section]
+        let array1 = age1[key]
+        print("\(array1!) adjakbhkdwakdbkadawh")
+        return array1!!.count
+        
     }
 
 }
