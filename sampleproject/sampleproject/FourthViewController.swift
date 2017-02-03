@@ -38,6 +38,23 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.register(UINib(nibName:"ViewCell1" ,bundle: nil), forCellReuseIdentifier: "ViewCell1")
         
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+            print("Delete tapped")
+            let key = Array(self.age1.keys)[indexPath.section]
+            var array1 = self.age1[key]!!
+            array1.remove(at: indexPath.row)
+            self.age1[key]!! = array1
+            tableView.reloadData()
+ 
+            
+        })
+        deleteAction.backgroundColor = UIColor.red
+
+        return [deleteAction]
+    
+    }
 
     
     @IBAction func nxt(_ sender: Any) {
