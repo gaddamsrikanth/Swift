@@ -24,6 +24,7 @@
 		5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF21E38B59100EA4690 /* SecondViewController.xib */; };
 		5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */; };
 		5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */; };
+		5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C68FE001E45BFBE00BDE7C2 /* 2.txt */; };
 		5C8F47741E405105004551DB /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47721E405105004551DB /* FourthViewController.swift */; };
 		5C8F47751E405105004551DB /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F47731E405105004551DB /* FourthViewController.xib */; };
 		5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47771E4054A6004551DB /* ViewCell1.swift */; };
@@ -83,6 +84,7 @@
 		5C557BF21E38B59100EA4690 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		5C68FE001E45BFBE00BDE7C2 /* 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
 		5C8F47721E405105004551DB /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		5C8F47731E405105004551DB /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
 		5C8F47771E4054A6004551DB /* ViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell1.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		5C8F47811E4076D3004551DB /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C68FE001E45BFBE00BDE7C2 /* 2.txt */,
 				5C8F47821E4076F7004551DB /* TabViewController1.swift */,
 				5C8F47831E4076F7004551DB /* TabViewController1.xib */,
 				5C8F47861E407707004551DB /* TabViewController2.swift */,
@@ -350,6 +353,7 @@
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
 				5CA03A7F1E3F6AB100755207 /* myFile.txt in Resources */,
 				5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */,
+				5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
 			);

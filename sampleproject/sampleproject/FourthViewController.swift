@@ -56,7 +56,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             array1.remove(at: indexPath.row)
             self.age1[key]!! = array1
             
-            let uk = Array(self.ukey.keys)[indexPath.section]
+            _ = Array(self.ukey.keys)[indexPath.section]
             var array2 = self.ukey[key]!!
             var dictkey = array2[indexPath.row]
             for i in 0 ..< self.arrDict.count
@@ -67,12 +67,12 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
                     break
                 }
         }
-             self.wrt()
+            
                 self.arrDict.removeObject(at: dictkey)
             print("NewDatar\(self.arrDict)NewData")
             
             tableView.reloadData()
-            
+            self.wrt(json: self.arrDict)
             
         })
         deleteAction.backgroundColor = UIColor.red
@@ -205,18 +205,20 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
 
     }
     
-    func wrt(){
-        let file = "1.txt"
+    func wrt(json: AnyObject){
         print("ABCD")
-        
-        let text = "some text"
+            do {
+                let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+                let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+                print(convertedString!) // <-- here is ur string
+        let text = "{\n\t\"person\":"+convertedString!+"\n}"
         
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             
-            let path = dir.appendingPathComponent(file)
+            let path = "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.json"
             
             do {
-                try text.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                try text.write(toFile: path,  atomically: true, encoding: String.Encoding.utf8)
                 print("Successful")
             }
             catch {
@@ -228,5 +230,10 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         print("Jaadu kei ni jai")
         }
     }
+            catch{
+        print("Error")
+        }
+    }
+    
 
 }

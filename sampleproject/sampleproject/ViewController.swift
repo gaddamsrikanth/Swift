@@ -66,7 +66,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         textField.resignFirstResponder()
         return true
     }
-    func textFieldDidEndEditing(_ textView: UITextView){
+    private func textFieldDidEndEditing(_ textView: UITextView){
         print("ABCD")
         self.animals[selected!] = self.textField.text!
         //tableView.reloadData()
