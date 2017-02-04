@@ -3,12 +3,37 @@
               {
               "name": "Bob",
               "age": "16",
-              "image": "Apricot"
+              "image": "Apple"
               },
               {
               "name": "Vinny",
-              "age": "56",
+              "age": "30",
+              "image": "Apple"
+              },
+              {
+              "name": "Alex",
+              "age": "25",
+              "image": "Apple"
+              },
+              {
+              "name": "Max",
+              "age": "35",
+              "image": "Apple"
+              },
+              {
+              "name": "H",
+              "age": "15",
+              "image": "Apple"
+              },
+              {
+              "name": "B",
+              "age": "19",
+              "image": "Apple"
+              },
+              {
+              "name": "A",
+              "age": "22",
               "image": "Apple"
               }
-            ]
+              ]
 }

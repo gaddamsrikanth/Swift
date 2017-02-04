@@ -11,6 +11,7 @@
 		5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C28A4791E444EB300152411 /* SixthViewController.xib */; };
 		5C28A47E1E444F8100152411 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C28A47C1E444F8100152411 /* InstructionView.swift */; };
 		5C28A47F1E444F8100152411 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C28A47D1E444F8100152411 /* InstructionView.xib */; };
+		5C2CBF711E459DFA002CB43B /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C2CBF701E459DFA002CB43B /* 1.txt */; };
 		5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */; };
 		5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A91E388F3B000B36C3 /* ViewController.swift */; };
 		5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A62AB1E388F3B000B36C3 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		5C28A4791E444EB300152411 /* SixthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixthViewController.xib; sourceTree = "<group>"; };
 		5C28A47C1E444F8100152411 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		5C28A47D1E444F8100152411 /* InstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
+		5C2CBF701E459DFA002CB43B /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
 		5C4A62A41E388F3B000B36C3 /* sampleproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C4A62A91E388F3B000B36C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		5C4A62A61E388F3B000B36C3 /* sampleproject */ = {
 			isa = PBXGroup;
 			children = (
+				5C2CBF701E459DFA002CB43B /* 1.txt */,
+				5CA03A7E1E3F6AB100755207 /* myFile.txt */,
 				5C28A4781E444EB300152411 /* SixthViewController.swift */,
 				5C28A4791E444EB300152411 /* SixthViewController.xib */,
 				5C8F47811E4076D3004551DB /* TabViewControllers */,
@@ -219,7 +223,6 @@
 			children = (
 				5CA03A781E3F3FAE00755207 /* ViewCell.swift */,
 				5CA03A791E3F3FAE00755207 /* ViewCell.xib */,
-				5CA03A7E1E3F6AB100755207 /* myFile.txt */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				5C8F47751E405105004551DB /* FourthViewController.xib in Resources */,
 				5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */,
 				5C28A47F1E444F8100152411 /* InstructionView.xib in Resources */,
+				5C2CBF711E459DFA002CB43B /* 1.txt in Resources */,
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */,

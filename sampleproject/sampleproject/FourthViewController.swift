@@ -15,7 +15,11 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         "Med": [],
         "High": []
     ]
+    var jsonString: String?
+    var jsonData: NSData!
     var arrDict :NSMutableArray=[]
+    let path1 = "myFile.txt"
+    let path: NSString = Bundle.main.path(forResource: "1", ofType: "json")! as NSString
     
     @IBOutlet var back: UIButton!
     @IBOutlet var fwd: UIButton!
@@ -46,8 +50,11 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             var array1 = self.age1[key]!!
             array1.remove(at: indexPath.row)
             self.age1[key]!! = array1
+            self.arrDict.removeObject(at: indexPath.row)
+            print(self.arrDict)
+            self.wrt()
             tableView.reloadData()
- 
+            
             
         })
         deleteAction.backgroundColor = UIColor.red
@@ -75,7 +82,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
         func jsonParsingFromFile()
         {
-            let path: NSString = Bundle.main.path(forResource: "1", ofType: "json")! as NSString
+            
             let data : NSData = try! NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped)
             self.startParsing(data: data)
         }
@@ -100,7 +107,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
                 arr.append(age2)
                 age1["Med"] = arr
             }
-            else{
+            else if(age2>70){
                 arr = age1["High"]!!
                 arr.append(age2)
                 age1["High"] = arr
@@ -141,20 +148,53 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     
-
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return age1.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
+    
         let key = Array(age1.keys)[section]
         let array1 = age1[key]
         print("\(array1!) adjakbhkdwakdbkadawh")
         return array1!!.count
         
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let key = Array(age1.keys)[sourceIndexPath.section]
+        var array1 = age1[key]
+        let itemToMove = array1??[sourceIndexPath.row]
+        print(itemToMove!)
+        array1??.remove(at: sourceIndexPath.row)
+        array1??.insert(itemToMove!, at: destinationIndexPath.row)
+        age1[key] = array1
+        tableView.reloadData()
+
+    }
+    
+    func wrt(){
+    let path = "1.txt"
+        let filemgr = FileManager.default
+        if filemgr.isWritableFile(atPath: path) {
+            print("File is writable")
+        } else {
+            print("File is read-only")
+        }
+    // Set the contents
+    let contents = "Here are my file's contents"
+    
+    do {
+    // Write contents to file
+    try contents.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
+    }
+    catch let error as NSError {
+    print("Ooops! Something went wrong: \(error)")
+    }
+    
     }
 
 }
