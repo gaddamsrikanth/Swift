@@ -10,7 +10,11 @@ import UIKit
 import Foundation
 
 class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    var age1: Dictionary<String,[Int]?> = [
+        "Low": [],
+        "Med": [],
+        "High": []
+    ]
     var arrDict :NSMutableArray=[]
     
     @IBOutlet var back: UIButton!
@@ -19,10 +23,37 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+    }
+    
+    func editButtonPressed(){
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing == true{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName:"ViewCell1" ,bundle: nil), forCellReuseIdentifier: "ViewCell1")
         
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+            print("Delete tapped")
+            let key = Array(self.age1.keys)[indexPath.section]
+            var array1 = self.age1[key]!!
+            array1.remove(at: indexPath.row)
+            self.age1[key]!! = array1
+            tableView.reloadData()
+ 
+            
+        })
+        deleteAction.backgroundColor = UIColor.red
+
+        return [deleteAction]
+    
     }
 
     
@@ -33,9 +64,8 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func bck(_ sender: Any) {
-        let vc = ThirdViewController()
         if let nav = self.navigationController {
-        nav.popToViewController(vc, animated: true)
+        nav.popViewController(animated: true)
         }
         
     }
@@ -55,6 +85,27 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         for i in 0  ..< (dict.value(forKey: "person") as! NSArray).count
         {
             arrDict.add((dict.value(forKey: "person") as! NSArray) .object(at: i))
+            let age2 = Int(((arrDict[i] as AnyObject).value(forKey: "age") as? String)!)!
+            var arr: [Int] = []
+            print(age1)
+            if(age2>10 && age2<30)
+            {
+                arr = age1["Low"]!!
+                arr.append(age2)
+                age1["Low"] = arr
+            }
+            else if(age2>30 && age2<70)
+            {
+                arr = age1["Med"]!!
+                arr.append(age2)
+                age1["Med"] = arr
+            }
+            else{
+                arr = age1["High"]!!
+                arr.append(age2)
+                age1["High"] = arr
+            }
+
         }
 
         print(arrDict)
@@ -65,10 +116,6 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(arrDict.count)
-        return arrDict.count
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
@@ -77,12 +124,37 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell1") as! ViewCell1
         let strTitle : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "name") as! NSString
-        let strDescription : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "age") as! NSString
         let img : NSString=(arrDict[indexPath.row] as AnyObject).value(forKey: "image") as! NSString
+        
+        let key = Array(age1.keys)[indexPath.section]
+        let array1 = age1[key]!!
+        
         cell.label1.text=strTitle as String
-        cell.label2.text=strDescription as String
+        cell.label2.text=String(describing: array1[indexPath.row])
         cell.imgvw.image = UIImage(named: img as String)
         return cell as ViewCell1
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    let key = Array(age1.keys)[section]
+        return key
+        
+    }
+    
+
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return age1.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        
+        let key = Array(age1.keys)[section]
+        let array1 = age1[key]
+        print("\(array1!) adjakbhkdwakdbkadawh")
+        return array1!!.count
+        
     }
 
 }

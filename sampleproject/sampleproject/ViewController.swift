@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
-    
-    var animals : [String] = ["Apple","Apricot","C","D"]
+    let section1 = ["pizza", "deep dish pizza", "calzone"]
+    var animals : [String] = ["Apple","Apricot","food","D"]
     let cellReuseIdentifier = "cell"
     var refresh : UIRefreshControl!
     var timer: Timer!
@@ -57,6 +57,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         cell.lbl2!.text = animalName
         return cell
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row)")
     }
@@ -197,5 +198,22 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         return [editAction, deleteAction]
     }
     
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return section1[section]
+        
+    }
     
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        
+        return section1.count
+        
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        
+        return section1.count
+        
+    }
 }
