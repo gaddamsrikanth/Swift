@@ -208,14 +208,14 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     func wrt(json: AnyObject){
         print("ABCD")
             do {
-                let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
-                let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
-                print(convertedString!) // <-- here is ur string
-        let text = "{\n\t\"person\":"+convertedString!+"\n}"
+                let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let convertedString = String(data: data1, encoding: String.Encoding.utf8)
+                print(convertedString!)
+                let text = "{\n\t\"person\":"+convertedString!+"\n}"
         
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        if FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first != nil {
             
-            let path = "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.json"
+            let path = "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.txt"
             
             do {
                 try text.write(toFile: path,  atomically: true, encoding: String.Encoding.utf8)
@@ -227,7 +227,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
 
         }
         else{
-        print("Jaadu kei ni jai")
+        print("Error")
         }
     }
             catch{
