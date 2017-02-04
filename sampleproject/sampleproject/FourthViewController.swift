@@ -15,6 +15,11 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         "Med": [],
         "High": []
     ]
+    var ukey: Dictionary<String,[ Int]?> = [
+        "Low": [],
+        "Med": [],
+        "High": []
+    ]
     var jsonString: String?
     var jsonData: NSData!
     var arrDict :NSMutableArray=[]
@@ -50,9 +55,22 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             var array1 = self.age1[key]!!
             array1.remove(at: indexPath.row)
             self.age1[key]!! = array1
-            self.arrDict.removeObject(at: indexPath.row)
-            print(self.arrDict)
-            self.wrt()
+            
+            let uk = Array(self.ukey.keys)[indexPath.section]
+            var array2 = self.ukey[key]!!
+            var dictkey = array2[indexPath.row]
+            for i in 0 ..< self.arrDict.count
+            {
+                let key1 = ((self.arrDict[i] as AnyObject).value!(forKey: "key") as! Int)
+                if(key1 == dictkey){
+                 dictkey = i
+                    break
+                }
+        }
+             self.wrt()
+                self.arrDict.removeObject(at: dictkey)
+            print("NewDatar\(self.arrDict)NewData")
+            
             tableView.reloadData()
             
             
@@ -93,24 +111,35 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         {
             arrDict.add((dict.value(forKey: "person") as! NSArray) .object(at: i))
             let age2 = Int(((arrDict[i] as AnyObject).value(forKey: "age") as? String)!)!
+            let age3 = Int(((arrDict[i] as AnyObject).value(forKey: "key") as? Int)!)
             var arr: [Int] = []
+            var arr1: [Int] = []
             print(age1)
             if(age2>10 && age2<30)
             {
                 arr = age1["Low"]!!
+                arr1 = ukey["Low"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["Low"] = arr
+                ukey["Low"] = arr1
             }
-            else if(age2>30 && age2<70)
+            else if(age2>=30 && age2<70)
             {
                 arr = age1["Med"]!!
+                arr1 = ukey["Med"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["Med"] = arr
+                ukey["Med"] = arr1
             }
             else if(age2>70){
                 arr = age1["High"]!!
+                arr1 = ukey["High"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["High"] = arr
+                ukey["High"] = arr1
             }
 
         }
@@ -156,7 +185,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     
         let key = Array(age1.keys)[section]
         let array1 = age1[key]
-        print("\(array1!) adjakbhkdwakdbkadawh")
+        print("\(array1!) Rows")
         return array1!!.count
         
     }
@@ -177,24 +206,27 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func wrt(){
-    let path = "1.txt"
-        let filemgr = FileManager.default
-        if filemgr.isWritableFile(atPath: path) {
-            print("File is writable")
-        } else {
-            print("File is read-only")
+        let file = "1.txt"
+        print("ABCD")
+        
+        let text = "some text"
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let path = dir.appendingPathComponent(file)
+            
+            do {
+                try text.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                print("Successful")
+            }
+            catch {
+            print("Writing not performed")
+            }
+
         }
-    // Set the contents
-    let contents = "Here are my file's contents"
-    
-    do {
-    // Write contents to file
-    try contents.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
-    }
-    catch let error as NSError {
-    print("Ooops! Something went wrong: \(error)")
-    }
-    
+        else{
+        print("Jaadu kei ni jai")
+        }
     }
 
 }
