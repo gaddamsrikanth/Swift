@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var refresh : UIRefreshControl!
     var timer: Timer!
     
+    @IBOutlet var smpl: UIButton!
     @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
     @IBOutlet var del: UIButton!
@@ -147,6 +148,13 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
 
             //tableView.reloadData()
         }
+    }
+    
+    @IBAction func smple(_ sender: Any) {
+        let vc = SampleViewController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func swtch(_ sender: Any) {

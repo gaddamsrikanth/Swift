@@ -14,6 +14,7 @@
                 <outlet property="add" destination="kUb-XT-0Iu" id="m8w-s1-OF8"/>
                 <outlet property="del" destination="W08-Sj-aXx" id="ruq-2Y-w0Y"/>
                 <outlet property="lbl" destination="hIw-5d-gQt" id="97I-Nd-9S9"/>
+                <outlet property="smpl" destination="9Di-qR-XaC" id="s4u-5b-4SW"/>
                 <outlet property="swtch" destination="zJg-Xa-NwQ" id="UoH-RE-LAr"/>
                 <outlet property="tableView" destination="ha6-vv-s2t" id="EKI-Ej-Y0o"/>
                 <outlet property="textField" destination="iE4-I7-wwf" id="02h-nA-sRc"/>
@@ -87,6 +88,14 @@
                         <action selector="swtch:" destination="-1" eventType="valueChanged" id="GOF-ha-c4M"/>
                     </connections>
                 </switch>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Di-qR-XaC">
+                    <rect key="frame" x="300" y="82" width="59" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Sample"/>
+                    <connections>
+                        <action selector="smple:" destination="-1" eventType="touchDown" id="QrB-H3-4gk"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>
