@@ -150,12 +150,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         }
     }
     
-    @IBAction func smple(_ sender: Any) {
-        let vc = SampleViewController()
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
+    
     
     @IBAction func swtch(_ sender: Any) {
         if(tableView.allowsMultipleSelection == true)

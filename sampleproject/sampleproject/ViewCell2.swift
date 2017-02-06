@@ -10,13 +10,10 @@ import UIKit
 
 class ViewCell2: UITableViewCell {
     
-    @IBOutlet var left: UIButton!
-    @IBOutlet var mainView: UIView!
-    @IBOutlet weak var right: UIButton!
     
-    @IBAction func righttapped(_ sender: Any) {
-        print("Tapped Right")
-    }
+    @IBOutlet var mainView: UIView!
+    @IBOutlet var left: UIButton!
+    @IBOutlet var right: UIButton!
     
     override func awakeFromNib() {
         let leftSwipe = UISwipeGestureRecognizer(target: self, action:#selector(ViewCell2.swipe(sender:)))

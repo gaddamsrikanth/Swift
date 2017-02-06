@@ -1,5 +1,5 @@
 //
-//  SampleViewController.swift
+//  DetailViewController.swift
 //  sampleproject
 //
 //  Created by Developer88 on 2/6/17.
@@ -8,25 +8,18 @@
 
 import UIKit
 
-class SampleViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
-    @IBOutlet var tableView: UITableView!
+class DetailViewController: UIViewController {
+    var contname : Any?
+    @IBOutlet var view1: UIView!
+    @IBOutlet var label1: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName:"ViewCell3",bundle: nil), forCellReuseIdentifier: "ViewCell3")
-        tableView.delegate = self
-        tableView.dataSource = self
+        if let value = ShareData.shared.stringValue {
+            print(value)
+        }
+        label1.text = ShareData.shared.stringValue
         // Do any additional setup after loading the view.
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell3", for: indexPath)
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
