@@ -9,7 +9,13 @@
 import UIKit
 
 class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    let controller = [SecondViewController(), ThirdViewController(), FourthViewController()]
+    let controller = [SecondViewController(), ThirdViewController(), FourthViewController(),DetailViewController(),TabViewController2()]
+    
+    @IBOutlet var sbmt: UIButton!
+    @IBOutlet var lat: UILabel!
+    @IBOutlet var long: UILabel!
+    @IBOutlet var t1: UITextField!
+    @IBOutlet var t2: UITextField!
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var share: UIButton!
@@ -22,10 +28,18 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     
+    
+    @IBAction func sbmt(_ sender: Any) {
+        let lon = t1.text
+        let la = t2.text
+        
+    }
+    
     @IBAction func shr(_ sender: Any) {
         let text = "Text to share"
         let t1 = [text]
         let activityViewController = UIActivityViewController(activityItems: t1, applicationActivities: nil)
+         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController,animated: true, completion: nil)
     }
 
