@@ -36,9 +36,8 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     @IBAction func shr(_ sender: Any) {
-        let text = "Text to share"
-        let t1 = [text]
-        let activityViewController = UIActivityViewController(activityItems: t1, applicationActivities: nil)
+        let url = NSURL.fileURL(withPath: "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.txt")
+        let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
          activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController,animated: true, completion: nil)
     }
