@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    let controller = ["SecondViewController", "ThirdViewController", "FourthViewController"]
+    let controller = [SecondViewController(), ThirdViewController(), FourthViewController()]
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,14 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell4", for: indexPath) as! ViewCell4
-        let Name = controller[indexPath.row]
-        cell.lbl1.text = Name
+        cell.lbl1.text = controller[indexPath.row].nibName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ShareData.shared.stringValue = controller[indexPath.row]
+
         print("You tapped cell number \(indexPath.row)")
+        let app = UIApplication.shared.delegate as! AppDelegate
+        app.disp(vc: controller[indexPath.row])
         
     }
     override func didReceiveMemoryWarning() {

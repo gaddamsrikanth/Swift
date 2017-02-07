@@ -11,6 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var splitVC = UISplitViewController()
     var window: UIWindow?
     var navcontroller: UINavigationController?
     var vc: ViewController?
@@ -18,12 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         var firstVC = MasterViewController()
         var secondVC = DetailViewController()
-        var splitVC = UISplitViewController()
+        
         splitVC.viewControllers = [firstVC, secondVC]
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = splitVC
         window?.makeKeyAndVisible()
         return true
+    }
+    func disp(vc :UIViewController){
+        splitVC.viewControllers.remove(at: 1)
+//        let vc1 = Bundle.main.loadNibNamed(v, owner: self, options: nil)
+        splitVC.viewControllers.append(vc)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
