@@ -15,7 +15,16 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         "Med": [],
         "High": []
     ]
+    var ukey: Dictionary<String,[ Int]?> = [
+        "Low": [],
+        "Med": [],
+        "High": []
+    ]
+    var jsonString: String?
+    var jsonData: NSData!
     var arrDict :NSMutableArray=[]
+    let path1 = "myFile.txt"
+    let path: NSString = Bundle.main.path(forResource: "1", ofType: "json")! as NSString
     
     @IBOutlet var back: UIButton!
     @IBOutlet var fwd: UIButton!
@@ -46,8 +55,24 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             var array1 = self.age1[key]!!
             array1.remove(at: indexPath.row)
             self.age1[key]!! = array1
+            
+            _ = Array(self.ukey.keys)[indexPath.section]
+            var array2 = self.ukey[key]!!
+            var dictkey = array2[indexPath.row]
+            for i in 0 ..< self.arrDict.count
+            {
+                let key1 = ((self.arrDict[i] as AnyObject).value!(forKey: "key") as! Int)
+                if(key1 == dictkey){
+                 dictkey = i
+                    break
+                }
+        }
+            
+                self.arrDict.removeObject(at: dictkey)
+            print("NewDatar\(self.arrDict)NewData")
+            
             tableView.reloadData()
- 
+            self.wrt(json: self.arrDict)
             
         })
         deleteAction.backgroundColor = UIColor.red
@@ -75,7 +100,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
         func jsonParsingFromFile()
         {
-            let path: NSString = Bundle.main.path(forResource: "1", ofType: "json")! as NSString
+            
             let data : NSData = try! NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped)
             self.startParsing(data: data)
         }
@@ -86,24 +111,35 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         {
             arrDict.add((dict.value(forKey: "person") as! NSArray) .object(at: i))
             let age2 = Int(((arrDict[i] as AnyObject).value(forKey: "age") as? String)!)!
+            let age3 = Int(((arrDict[i] as AnyObject).value(forKey: "key") as? Int)!)
             var arr: [Int] = []
+            var arr1: [Int] = []
             print(age1)
             if(age2>10 && age2<30)
             {
                 arr = age1["Low"]!!
+                arr1 = ukey["Low"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["Low"] = arr
+                ukey["Low"] = arr1
             }
-            else if(age2>30 && age2<70)
+            else if(age2>=30 && age2<70)
             {
                 arr = age1["Med"]!!
+                arr1 = ukey["Med"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["Med"] = arr
+                ukey["Med"] = arr1
             }
-            else{
+            else if(age2>70){
                 arr = age1["High"]!!
+                arr1 = ukey["High"]!!
                 arr.append(age2)
+                arr1.append(age3)
                 age1["High"] = arr
+                ukey["High"] = arr1
             }
 
         }
@@ -141,20 +177,63 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     
-
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return age1.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
+    
         let key = Array(age1.keys)[section]
         let array1 = age1[key]
-        print("\(array1!) adjakbhkdwakdbkadawh")
+        print("\(array1!) Rows")
         return array1!!.count
         
     }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let key = Array(age1.keys)[sourceIndexPath.section]
+        var array1 = age1[key]
+        let itemToMove = array1??[sourceIndexPath.row]
+        print(itemToMove!)
+        array1??.remove(at: sourceIndexPath.row)
+        array1??.insert(itemToMove!, at: destinationIndexPath.row)
+        age1[key] = array1
+        tableView.reloadData()
+
+    }
+    
+    func wrt(json: AnyObject){
+        print("ABCD")
+            do {
+                let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let convertedString = String(data: data1, encoding: String.Encoding.utf8)
+                print(convertedString!)
+                let text = "{\n\t\"person\":"+convertedString!+"\n}"
+        
+        if FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first != nil {
+            
+            let path = "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.txt"
+            
+            do {
+                try text.write(toFile: path,  atomically: true, encoding: String.Encoding.utf8)
+                print("Successful")
+            }
+            catch {
+            print("Writing not performed")
+            }
+
+        }
+        else{
+        print("Error")
+        }
+    }
+            catch{
+        print("Error")
+        }
+    }
+    
 
 }

@@ -41,11 +41,10 @@ class SixthViewController: UIPageViewController, UIPageViewControllerDataSource
         var index = (viewController as! InstructionView).pageIndex
         
         if (index == 0) || (index == NSNotFound) {
-            index = self.pageTitles.count
+            index = 0
+        }else{
+            index -= 1
         }
-        
-        index -= 1
-        
         return viewControllerAtIndex(index: index)
     }
     
@@ -53,35 +52,31 @@ class SixthViewController: UIPageViewController, UIPageViewControllerDataSource
     {
         var index = (viewController as! InstructionView).pageIndex
         
-        if index == NSNotFound {
-            return nil
-        }
-        
+//        if index == NSNotFound {
+//            return nil
+//        }
         index += 1
-        
-        if (index == self.pageTitles.count) {
-            index = 0
+        if(index == self.pageTitles.count){
+           return nil
         }
-        
+        self.pageControl.currentPage = index
         return viewControllerAtIndex(index: index)
     }
     
     func viewControllerAtIndex(index: Int) -> InstructionView?
     {
-        if self.pageTitles.count == 0
-        {
-            return nil
-        }
+//        if self.pageTitles.count == 0
+//        {
+//            return nil
+//        }
         
         // Create a new view controller and pass suitable data.
         let pageContentViewController = InstructionView()
-        //pageContentViewController.imageFile = pageImages[index]
-        pageContentViewController.titleText = pageTitles[index]
+//        pageContentViewController.imageFile = pageImages[index]
+        pageContentViewController.titleText = pageTitles[index]+" "+String(index)
         pageContentViewController.pageIndex = index
         currentIndex = index
-        self.pageControl.currentPage = currentIndex;
         print(index)
-        
         
         return pageContentViewController
     }

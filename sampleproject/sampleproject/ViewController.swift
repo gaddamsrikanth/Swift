@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var refresh : UIRefreshControl!
     var timer: Timer!
     
+    @IBOutlet var smpl: UIButton!
     @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
     @IBOutlet var del: UIButton!
@@ -66,7 +67,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         textField.resignFirstResponder()
         return true
     }
-    func textFieldDidEndEditing(_ textView: UITextView){
+    private func textFieldDidEndEditing(_ textView: UITextView){
         print("ABCD")
         self.animals[selected!] = self.textField.text!
         //tableView.reloadData()
@@ -148,6 +149,8 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
             //tableView.reloadData()
         }
     }
+    
+    
     
     @IBAction func swtch(_ sender: Any) {
         if(tableView.allowsMultipleSelection == true)

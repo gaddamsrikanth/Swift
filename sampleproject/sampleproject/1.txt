@@ -6,12 +6,6 @@
     "name" : "Bob",
     "image" : "Apple"
   },
-              {
-              "age" : "30",
-              "key" : 2,
-              "name" : "Vinny",
-              "image" : "Apple"
-              },
   {
     "age" : "25",
     "key" : 3,

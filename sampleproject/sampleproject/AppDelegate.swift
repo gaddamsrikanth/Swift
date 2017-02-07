@@ -16,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var vc: ViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        navcontroller = UINavigationController()
-        vc = ViewController()
-        self.navcontroller!.pushViewController(vc!, animated: true)
-        
-        self.window!.rootViewController = navcontroller
-        self.window!.makeKeyAndVisible()
+        var firstVC = MasterViewController()
+        var secondVC = DetailViewController()
+        var splitVC = UISplitViewController()
+        splitVC.viewControllers = [firstVC, secondVC]
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = splitVC
+        window?.makeKeyAndVisible()
         return true
     }
 

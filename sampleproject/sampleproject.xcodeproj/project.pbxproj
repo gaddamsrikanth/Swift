@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C08C9D01E48503C008B957D /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9CE1E48503C008B957D /* SampleViewController.swift */; };
+		5C08C9D11E48503C008B957D /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9CF1E48503C008B957D /* SampleViewController.xib */; };
+		5C08C9E21E487C01008B957D /* ViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9E01E487C01008B957D /* ViewCell2.swift */; };
+		5C08C9E31E487C01008B957D /* ViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9E11E487C01008B957D /* ViewCell2.xib */; };
+		5C08C9E71E487E1A008B957D /* ViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9E51E487E1A008B957D /* ViewCell3.swift */; };
+		5C08C9EA1E48839D008B957D /* ViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9E91E48839D008B957D /* ViewCell3.xib */; };
+		5C08C9F11E4896E1008B957D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9EF1E4896E1008B957D /* MasterViewController.swift */; };
+		5C08C9F21E4896E1008B957D /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9F01E4896E1008B957D /* MasterViewController.xib */; };
+		5C08C9F71E489882008B957D /* ViewCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9F51E489882008B957D /* ViewCell4.swift */; };
+		5C08C9F81E489882008B957D /* ViewCell4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9F61E489882008B957D /* ViewCell4.xib */; };
+		5C08C9FB1E489A85008B957D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9F91E489A85008B957D /* DetailViewController.swift */; };
+		5C08C9FC1E489A85008B957D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08C9FA1E489A85008B957D /* DetailViewController.xib */; };
+		5C08C9FE1E48AF59008B957D /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08C9FD1E48AF59008B957D /* ShareData.swift */; };
 		5C28A47A1E444EB300152411 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C28A4781E444EB300152411 /* SixthViewController.swift */; };
 		5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C28A4791E444EB300152411 /* SixthViewController.xib */; };
 		5C28A47E1E444F8100152411 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C28A47C1E444F8100152411 /* InstructionView.swift */; };
 		5C28A47F1E444F8100152411 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C28A47D1E444F8100152411 /* InstructionView.xib */; };
+		5C2CBF711E459DFA002CB43B /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C2CBF701E459DFA002CB43B /* 1.txt */; };
 		5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */; };
 		5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A91E388F3B000B36C3 /* ViewController.swift */; };
 		5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A62AB1E388F3B000B36C3 /* Main.storyboard */; };
@@ -23,6 +37,7 @@
 		5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF21E38B59100EA4690 /* SecondViewController.xib */; };
 		5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */; };
 		5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */; };
+		5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C68FE001E45BFBE00BDE7C2 /* 2.txt */; };
 		5C8F47741E405105004551DB /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47721E405105004551DB /* FourthViewController.swift */; };
 		5C8F47751E405105004551DB /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F47731E405105004551DB /* FourthViewController.xib */; };
 		5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47771E4054A6004551DB /* ViewCell1.swift */; };
@@ -59,10 +74,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C08C9CE1E48503C008B957D /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		5C08C9CF1E48503C008B957D /* SampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		5C08C9E01E487C01008B957D /* ViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell2.swift; sourceTree = "<group>"; };
+		5C08C9E11E487C01008B957D /* ViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCell2.xib; sourceTree = "<group>"; };
+		5C08C9E51E487E1A008B957D /* ViewCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell3.swift; sourceTree = "<group>"; };
+		5C08C9E91E48839D008B957D /* ViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCell3.xib; sourceTree = "<group>"; };
+		5C08C9EF1E4896E1008B957D /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		5C08C9F01E4896E1008B957D /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		5C08C9F51E489882008B957D /* ViewCell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell4.swift; sourceTree = "<group>"; };
+		5C08C9F61E489882008B957D /* ViewCell4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCell4.xib; sourceTree = "<group>"; };
+		5C08C9F91E489A85008B957D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5C08C9FA1E489A85008B957D /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		5C08C9FD1E48AF59008B957D /* ShareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		5C28A4781E444EB300152411 /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		5C28A4791E444EB300152411 /* SixthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixthViewController.xib; sourceTree = "<group>"; };
 		5C28A47C1E444F8100152411 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		5C28A47D1E444F8100152411 /* InstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
+		5C2CBF701E459DFA002CB43B /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
 		5C4A62A41E388F3B000B36C3 /* sampleproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C4A62A91E388F3B000B36C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +110,7 @@
 		5C557BF21E38B59100EA4690 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		5C68FE001E45BFBE00BDE7C2 /* 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
 		5C8F47721E405105004551DB /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		5C8F47731E405105004551DB /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
 		5C8F47771E4054A6004551DB /* ViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell1.swift; sourceTree = "<group>"; };
@@ -124,6 +154,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C08C9D71E48599A008B957D /* Cell2 */ = {
+			isa = PBXGroup;
+			children = (
+				5C08C9E01E487C01008B957D /* ViewCell2.swift */,
+				5C08C9E11E487C01008B957D /* ViewCell2.xib */,
+			);
+			name = Cell2;
+			sourceTree = "<group>";
+		};
+		5C08C9E41E487E07008B957D /* Cell3 */ = {
+			isa = PBXGroup;
+			children = (
+				5C08C9E51E487E1A008B957D /* ViewCell3.swift */,
+				5C08C9E91E48839D008B957D /* ViewCell3.xib */,
+			);
+			name = Cell3;
+			sourceTree = "<group>";
+		};
+		5C08C9F31E489717008B957D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5C08C9F41E48986C008B957D /* Cell4 */ = {
+			isa = PBXGroup;
+			children = (
+				5C08C9F51E489882008B957D /* ViewCell4.swift */,
+				5C08C9F61E489882008B957D /* ViewCell4.xib */,
+			);
+			name = Cell4;
+			sourceTree = "<group>";
+		};
 		5C4A629B1E388F3A000B36C3 = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +211,12 @@
 		5C4A62A61E388F3B000B36C3 /* sampleproject */ = {
 			isa = PBXGroup;
 			children = (
-				5C28A4781E444EB300152411 /* SixthViewController.swift */,
-				5C28A4791E444EB300152411 /* SixthViewController.xib */,
+				5C08C9F41E48986C008B957D /* Cell4 */,
+				5C08C9F31E489717008B957D /* Controllers */,
+				5C08C9E41E487E07008B957D /* Cell3 */,
+				5C08C9D71E48599A008B957D /* Cell2 */,
+				5C2CBF701E459DFA002CB43B /* 1.txt */,
+				5CA03A7E1E3F6AB100755207 /* myFile.txt */,
 				5C8F47811E4076D3004551DB /* TabViewControllers */,
 				5C8F47761E40548A004551DB /* Cell1 */,
 				5CA03A771E3F3F8100755207 /* Cell */,
@@ -156,6 +224,8 @@
 				5C4A62A91E388F3B000B36C3 /* ViewController.swift */,
 				5C4A62D51E3891DD000B36C3 /* View.xib */,
 				5C4A62AB1E388F3B000B36C3 /* Main.storyboard */,
+				5C28A4781E444EB300152411 /* SixthViewController.swift */,
+				5C28A4791E444EB300152411 /* SixthViewController.xib */,
 				5C4A62AE1E388F3B000B36C3 /* Assets.xcassets */,
 				5C4A62B01E388F3B000B36C3 /* LaunchScreen.storyboard */,
 				5C4A62B31E388F3B000B36C3 /* Info.plist */,
@@ -172,6 +242,13 @@
 				5C8F477E1E4071BB004551DB /* FifthViewController.xib */,
 				5C28A47C1E444F8100152411 /* InstructionView.swift */,
 				5C28A47D1E444F8100152411 /* InstructionView.xib */,
+				5C08C9CE1E48503C008B957D /* SampleViewController.swift */,
+				5C08C9CF1E48503C008B957D /* SampleViewController.xib */,
+				5C08C9EF1E4896E1008B957D /* MasterViewController.swift */,
+				5C08C9F01E4896E1008B957D /* MasterViewController.xib */,
+				5C08C9F91E489A85008B957D /* DetailViewController.swift */,
+				5C08C9FA1E489A85008B957D /* DetailViewController.xib */,
+				5C08C9FD1E48AF59008B957D /* ShareData.swift */,
 			);
 			path = sampleproject;
 			sourceTree = "<group>";
@@ -206,6 +283,7 @@
 		5C8F47811E4076D3004551DB /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C68FE001E45BFBE00BDE7C2 /* 2.txt */,
 				5C8F47821E4076F7004551DB /* TabViewController1.swift */,
 				5C8F47831E4076F7004551DB /* TabViewController1.xib */,
 				5C8F47861E407707004551DB /* TabViewController2.swift */,
@@ -219,7 +297,6 @@
 			children = (
 				5CA03A781E3F3FAE00755207 /* ViewCell.swift */,
 				5CA03A791E3F3FAE00755207 /* ViewCell.xib */,
-				5CA03A7E1E3F6AB100755207 /* myFile.txt */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -337,15 +414,23 @@
 				5C8F47751E405105004551DB /* FourthViewController.xib in Resources */,
 				5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */,
 				5C28A47F1E444F8100152411 /* InstructionView.xib in Resources */,
+				5C2CBF711E459DFA002CB43B /* 1.txt in Resources */,
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */,
 				5C8F477A1E4054A7004551DB /* ViewCell1.xib in Resources */,
 				5C8F477C1E405752004551DB /* 1.json in Resources */,
+				5C08C9FC1E489A85008B957D /* DetailViewController.xib in Resources */,
 				5C8F47891E407707004551DB /* TabViewController2.xib in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
+				5C08C9D11E48503C008B957D /* SampleViewController.xib in Resources */,
+				5C08C9E31E487C01008B957D /* ViewCell2.xib in Resources */,
+				5C08C9EA1E48839D008B957D /* ViewCell3.xib in Resources */,
 				5CA03A7F1E3F6AB100755207 /* myFile.txt in Resources */,
 				5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */,
+				5C08C9F21E4896E1008B957D /* MasterViewController.xib in Resources */,
+				5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */,
+				5C08C9F81E489882008B957D /* ViewCell4.xib in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
 			);
@@ -375,16 +460,23 @@
 				5C8F477F1E4071BB004551DB /* FifthViewController.swift in Sources */,
 				5C8F47881E407707004551DB /* TabViewController2.swift in Sources */,
 				5C28A47E1E444F8100152411 /* InstructionView.swift in Sources */,
+				5C08C9FE1E48AF59008B957D /* ShareData.swift in Sources */,
 				5CA03A7A1E3F3FAE00755207 /* ViewCell.swift in Sources */,
 				5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */,
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
+				5C08C9D01E48503C008B957D /* SampleViewController.swift in Sources */,
 				5C8F47741E405105004551DB /* FourthViewController.swift in Sources */,
+				5C08C9E71E487E1A008B957D /* ViewCell3.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
+				5C08C9FB1E489A85008B957D /* DetailViewController.swift in Sources */,
 				5C28A47A1E444EB300152411 /* SixthViewController.swift in Sources */,
 				5C8F47841E4076F7004551DB /* TabViewController1.swift in Sources */,
 				5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */,
+				5C08C9F71E489882008B957D /* ViewCell4.swift in Sources */,
+				5C08C9F11E4896E1008B957D /* MasterViewController.swift in Sources */,
 				5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */,
 				5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */,
+				5C08C9E21E487C01008B957D /* ViewCell2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
