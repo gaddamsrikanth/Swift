@@ -11,12 +11,22 @@ import UIKit
 class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     let controller = [SecondViewController(), ThirdViewController(), FourthViewController()]
     @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var share: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName:"ViewCell4",bundle: nil), forCellReuseIdentifier: "ViewCell4")
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func shr(_ sender: Any) {
+        let text = "Text to share"
+        let t1 = [text]
+        let activityViewController = UIActivityViewController(activityItems: t1, applicationActivities: nil)
+        self.present(activityViewController,animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
