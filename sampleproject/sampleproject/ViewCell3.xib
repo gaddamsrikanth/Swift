@@ -48,6 +48,13 @@
                                             <action selector="mid:" destination="Kly-iI-Hr5" eventType="touchDown" id="t5l-wo-lFx"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88r-bm-s79">
+                                        <rect key="frame" x="174" y="0.0" width="51" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="btn:" destination="Kly-iI-Hr5" eventType="touchDown" id="ntM-36-hwM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -76,7 +83,7 @@
                 <outlet property="btn2" destination="c1L-4Q-IaH" id="aT4-RH-8Zx"/>
                 <outlet property="scrlvw" destination="VRz-2C-WuC" id="gWa-Eq-yHC"/>
             </connections>
-            <point key="canvasLocation" x="-71" y="47"/>
+            <point key="canvasLocation" x="-71" y="46.5"/>
         </tableViewCell>
     </objects>
 </document>

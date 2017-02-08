@@ -17,7 +17,9 @@ class ViewCell3:  UITableViewCell, UIScrollViewDelegate {
     @IBOutlet var btn2: UIButton!
     var last: CGFloat!
     var off: CGFloat!
-   
+    var buttonAction: ((_ sender: AnyObject) -> Void)?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         scrlvw.delegate = self
@@ -31,7 +33,6 @@ class ViewCell3:  UITableViewCell, UIScrollViewDelegate {
         }else if(self.last < scrlvw.contentOffset.x && scrlvw.isDragging == true){
             scrlvw.setContentOffset(CGPoint(x: 50, y: 0), animated: true)
         }
-        
     }
     
     @IBAction func mid(_ sender: Any) {
@@ -51,10 +52,11 @@ class ViewCell3:  UITableViewCell, UIScrollViewDelegate {
         if (scrlvw != nil) {
             scrlvw!.setContentOffset(scrollPoint, animated: false)
         }
-        
-    
     }
-    
+    @IBAction func btn(_ sender: Any) {
+        self.buttonAction?(sender as AnyObject)
+        print("Tapped")
+    }
     
 }
 
