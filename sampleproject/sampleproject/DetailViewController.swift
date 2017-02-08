@@ -8,19 +8,20 @@
 
 import UIKit
 
+
 class DetailViewController: UIViewController {
-    var contname : Any?
+
     @IBOutlet var view1: UIView!
     @IBOutlet var label1: UILabel!
+    
+    @IBOutlet var btn1: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let value = ShareData.shared.stringValue {
-            print(value)
-        }
-        label1.text = ShareData.shared.stringValue
-        // Do any additional setup after loading the view.
-    }
+            }
     
+    @IBAction func smap(_ sender: Any) {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
