@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="sampleproject" customModuleProvider="target">
             <connections>
                 <outlet property="add" destination="kUb-XT-0Iu" id="m8w-s1-OF8"/>
+                <outlet property="anm" destination="4UI-t6-XeC" id="XDV-ne-xAS"/>
                 <outlet property="del" destination="W08-Sj-aXx" id="ruq-2Y-w0Y"/>
                 <outlet property="lbl" destination="hIw-5d-gQt" id="97I-Nd-9S9"/>
                 <outlet property="smpl" destination="9Di-qR-XaC" id="s4u-5b-4SW"/>
@@ -100,6 +101,9 @@
                     <rect key="frame" x="0.0" y="82" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="1"/>
+                    <connections>
+                        <action selector="anim:" destination="-1" eventType="touchDown" id="Z0r-zZ-hEP"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

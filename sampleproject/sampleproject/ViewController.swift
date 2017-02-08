@@ -24,7 +24,8 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     @IBOutlet var lbl: UILabel!
-    @IBOutlet var OutButton: UIButton!
+    
+    @IBOutlet var anm: UIButton!
     
     var selected: Int?
     override func viewDidLoad() {
@@ -73,6 +74,11 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         //tableView.reloadData()
     }
     
+    
+    @IBAction func anim(_ sender: Any) {
+        let vc = Animation()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func smpl(_ sender: Any) {
         let vc = SampleViewController()
