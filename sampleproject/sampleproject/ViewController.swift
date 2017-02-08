@@ -73,6 +73,12 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         //tableView.reloadData()
     }
     
+    
+    @IBAction func smpl(_ sender: Any) {
+        let vc = SampleViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func txt(_ sender: Any) {
         lbl.text = textField.text
     }

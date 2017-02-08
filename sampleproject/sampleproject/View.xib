@@ -93,7 +93,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Sample"/>
                     <connections>
-                        <action selector="smple:" destination="-1" eventType="touchDown" id="QrB-H3-4gk"/>
+                        <action selector="smpl:" destination="-1" eventType="touchDown" id="sXR-FE-09i"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UI-t6-XeC">
