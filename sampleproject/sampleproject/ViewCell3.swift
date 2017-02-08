@@ -50,7 +50,9 @@ class ViewCell3:  UITableViewCell, UIScrollViewDelegate {
         let scrollPoint = CGPoint(x: 0 , y: 0)
         print("Button Tapped2")
         if (scrlvw != nil) {
-            scrlvw!.setContentOffset(scrollPoint, animated: false)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.scrlvw!.setContentOffset(scrollPoint, animated: false)
+            })
         }
     }
     @IBAction func btn(_ sender: Any) {
