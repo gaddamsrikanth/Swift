@@ -23,14 +23,11 @@ class Animation: UIViewController {
             let scaleT = CGAffineTransform(scaleX: self.scale,y: self.scale)
             let rt = CGAffineTransform(
                 rotationAngle: CGFloat(self.angle * M_PI / 180))
-            
             self.vw?.transform = scaleT.concatenating(rt)
             self.angle = (self.angle == 90 ? 180 : 90)
-            self.scale = (self.scale == 2 ? 1 : 2)
+            self.scale = (self.scale == 2 ? 3 : 2)
             self.vw?.center = location
             self.gravity = UIGravityBehavior(items : [self.vw!])
-            
-            
         }, completion: nil)
     }
 

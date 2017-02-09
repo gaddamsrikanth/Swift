@@ -14,11 +14,14 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
     var scrollView : UIScrollView!
     var imageView : UIImageView!
     
+
+    @IBOutlet var v2: UIView!
     @IBOutlet var v1: UIView!
     @IBOutlet var Back: UIButton!
     @IBOutlet var nxt: UIButton!
     var photo : UIImage!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +37,27 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         setZoomscale()
         setupGestureRecognizer()
-        // Do any additional setup after loading the view.
+        v2.layer.zPosition = 10
+
+        var frame1 = CGRect(x:147,y:348,width:80,height:124)
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(2.0)
+        UIView.setAnimationDelay(1.0)
+        UIView.setAnimationCurve(.easeOut)
+        let rot = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        let translate = CGAffineTransform(translationX: 16, y: 394)
+        let scale = CGAffineTransform(scaleX: 4.7, y: 5)
+        self.v2.transform = rot.concatenating(scale).concatenating(translate)
+        self.v2.backgroundColor = UIColor.red
+        
+        
+        UIView.commitAnimations()
     }
+        
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
         
@@ -76,14 +98,15 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func nextwind(_ sender: UIButton) {
         let vc = ThirdViewController()
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        
     }
     
     @IBAction func bck(_ sender: UIButton) {
         if let navController = self.navigationController{
         navController.popViewController(animated: true)}
     }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

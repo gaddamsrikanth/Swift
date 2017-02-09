@@ -14,6 +14,7 @@
                 <outlet property="Back" destination="X4p-6q-bAc" id="2X3-n8-Sau"/>
                 <outlet property="nxt" destination="iWz-Sa-sUY" id="2fx-ze-YLc"/>
                 <outlet property="v1" destination="dev-E3-9Ph" id="Mif-lM-oW2"/>
+                <outlet property="v2" destination="U3L-F7-o9d" id="V0x-m0-sLl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,7 +32,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dev-E3-9Ph">
-                    <rect key="frame" x="16" y="144" width="343" height="380"/>
+                    <rect key="frame" x="16" y="144" width="343" height="523"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -43,6 +44,11 @@
                         <action selector="bck:" destination="-1" eventType="touchDown" id="IO3-bP-XuQ"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3L-F7-o9d">
+                    <rect key="frame" x="125" y="20" width="124" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="72.5" y="59.5"/>
