@@ -53,6 +53,8 @@
 		5CA03A7F1E3F6AB100755207 /* myFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5CA03A7E1E3F6AB100755207 /* myFile.txt */; };
 		5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD74A1C1E3CC739003C68C1 /* CollectionViewCell.swift */; };
 		5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */; };
+		5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */; };
+		5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,8 @@
 		5CA03A7E1E3F6AB100755207 /* myFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myFile.txt; sourceTree = "<group>"; };
 		5CD74A1C1E3CC739003C68C1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
+		5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeventhViewController.xib; sourceTree = "<group>"; };
 		5CFC00F41E4B3B3F00DAB510 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		5CFC00F51E4B3B3F00DAB510 /* Animation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animation.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +206,8 @@
 				5C4A62D51E3891DD000B36C3 /* View.xib */,
 				5CFC00F41E4B3B3F00DAB510 /* Animation.swift */,
 				5CFC00F51E4B3B3F00DAB510 /* Animation.xib */,
+				5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */,
+				5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */,
 				5C08C9F21E4896E1008B957D /* MasterViewController.xib in Resources */,
 				5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */,
+				5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */,
 				5C08C9F81E489882008B957D /* ViewCell4.xib in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
@@ -474,6 +481,7 @@
 				5C28A47E1E444F8100152411 /* InstructionView.swift in Sources */,
 				5CA03A7A1E3F3FAE00755207 /* ViewCell.swift in Sources */,
 				5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */,
+				5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */,
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
 				5C08C9D01E48503C008B957D /* SampleViewController.swift in Sources */,
 				5C8F47741E405105004551DB /* FourthViewController.swift in Sources */,
