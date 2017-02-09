@@ -28,7 +28,7 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             
             
             // Create Tab two
-            let tabTwo = SecondViewController()
+           let tabTwo = SecondViewController()
             let tabTwoBarItem2 = UITabBarItem(title: "", image: UIImage(named : "fruit"), tag: 1)
             
             tabTwo.tabBarItem = tabTwoBarItem2
@@ -54,7 +54,7 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             let tab7 = SeventhViewController()
             tab7.tabBarItem = UITabBarItem(title:"tab7",image:nil,tag:7)
             
-            self.viewControllers = [tabOne, tabTwo, tabThree, tabFour,tabFive,tabSix,tab7]
+            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7]
         }
         
         // UITabBarControllerDelegate method
