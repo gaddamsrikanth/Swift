@@ -9,23 +9,38 @@
 import UIKit
 
 class SampleViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    var indexPath: NSIndexPath!
+    var cell : UITableViewCell!
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SampleViewController.editButtonPressed))
         tableView.register(UINib(nibName:"ViewCell3",bundle: nil), forCellReuseIdentifier: "ViewCell3")
         tableView.delegate = self
         tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell3", for: indexPath)
+        cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell3", for: indexPath)
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
+    func editButtonPressed(){
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing == true{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SampleViewController.editButtonPressed))
+        }else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SampleViewController.editButtonPressed))
+        }
+
+    }
+    
+   
     
     
     override func didReceiveMemoryWarning() {

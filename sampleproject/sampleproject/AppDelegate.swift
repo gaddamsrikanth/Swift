@@ -17,12 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var vc: ViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        var firstVC = MasterViewController()
+        /*var firstVC = MasterViewController()
         var secondVC = DetailViewController()
         
         splitVC.viewControllers = [firstVC, secondVC]
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = splitVC
+        window?.makeKeyAndVisible()
+        return true*/
+        window = UIWindow()
+        
+        // IQKeyboardManager.sharedManager().enable = true
+        let rootVC = ViewController()
+        let nav = UINavigationController(rootViewController: rootVC)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    let controller = [SecondViewController(), ThirdViewController(), FourthViewController(),DetailViewController(),TabViewController2()]
+    let controller = [SecondViewController(), ThirdViewController(), FourthViewController(),DetailViewController(),TabViewController2(),TabViewController1()]
     
     @IBOutlet var sbmt: UIButton!
     @IBOutlet var lat: UILabel!
