@@ -90,7 +90,6 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     }
     @IBAction func change(_ sender: UIButton!) {
         let vc = SecondViewController()
-        vc.myString = textField.text
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -82,6 +82,12 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     cell.img.image = img
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let asset = fetchResult.object(at: indexPath.item)
+        let img = getAssetThumbnail(asset: asset)
+         
+        print("ABCD1")
+    }
     func getAssetThumbnail(asset: PHAsset) -> UIImage {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()

@@ -2,7 +2,8 @@
 import UIKit
 
 class Animation: UIViewController {
-
+    
+    var gravity : UIGravityBehavior!
     var scale : CGFloat = 2
     var angle : Double = 180
     var vw : UIView?
@@ -22,14 +23,30 @@ class Animation: UIViewController {
             let scaleT = CGAffineTransform(scaleX: self.scale,y: self.scale)
             let rt = CGAffineTransform(
                 rotationAngle: CGFloat(self.angle * M_PI / 180))
-            
             self.vw?.transform = scaleT.concatenating(rt)
             self.angle = (self.angle == 90 ? 180 : 90)
-            self.scale = (self.scale == 2 ? 1 : 2)
+            self.scale = (self.scale == 2 ? 3 : 2)
             self.vw?.center = location
+            self.gravity = UIGravityBehavior(items : [self.vw!])
         }, completion: nil)
     }
 
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        var text=""
+        switch UIDevice.current.orientation{
+        case .portrait:
+            text="Portrait"
+        case .portraitUpsideDown:
+            text="PortraitUpsideDown"
+        case .landscapeLeft:
+            text="LandscapeLeft"
+        case .landscapeRight:
+            text="LandscapeRight"
+        default:
+            text="Another"
+        }
+        print("You have moved: \(text)")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
