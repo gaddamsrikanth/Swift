@@ -89,7 +89,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         lbl.text = textField.text
     }
     @IBAction func change(_ sender: UIButton!) {
-        let vc = SecondViewController()
+        let vc = ThirdViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

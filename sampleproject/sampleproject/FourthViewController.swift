@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+
 class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var age1: Dictionary<String,[Int]?> = [
         "Low": [],
