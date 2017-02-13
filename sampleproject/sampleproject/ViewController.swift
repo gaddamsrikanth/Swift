@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UISearchResultsUpdating {
     
     let section1 = ["pizza", "deep dish pizza", "calzone"]
     var animals : [String] = ["Apple","Apricot","food","D"]
     let cellReuseIdentifier = "cell"
     var refresh : UIRefreshControl!
     var timer: Timer!
+    var filteredTableData = [String]()
+    var resultSearchController = UISearchController()
     
     @IBOutlet var cr: UIButton!
     @IBOutlet var smpl: UIButton!
@@ -31,12 +33,22 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var selected: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            self.tableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
         refresh = UIRefreshControl()
         tableView.addSubview(refresh)
         refresh.backgroundColor = UIColor.red
         refresh.tintColor = UIColor.yellow
         refresh.addTarget(self, action: #selector(ViewController.refresh1(_:)), for: UIControlEvents.valueChanged)
-        tableView.register(UINib(nibName:"ViewCell",bundle: nil), forCellReuseIdentifier: "ViewCell")
+        tableView.register(UINib(nibName:"ViewCell1",bundle: nil), forCellReuseIdentifier: "ViewCell1")
         tableView.delegate = self
         tableView.dataSource = self
         textField.delegate = self
@@ -47,22 +59,37 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         else
         {
         tableView.allowsMultipleSelection = false}
+        tableView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.animals.count
+        if (self.resultSearchController.isActive) {
+            return self.filteredTableData.count
+        }
+        else {
+            return self.animals.count
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell", for: indexPath) as! ViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell1", for: indexPath) as! ViewCell1
         let animalName = animals[indexPath.row]
-        cell.lbl1!.text = animalName
-        cell.imgview!.image = UIImage(named: animalName)
-        cell.lbl2!.text = animalName
-        return cell
+        if (self.resultSearchController.isActive) {
+            cell.label1.text = filteredTableData[indexPath.row]
+            
+            return cell
+        }
+        else {
+            cell.label1.text = animalName
+            
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row)")
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 6e0
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -233,5 +260,15 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         
         return section1.count
         
+    }
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        filteredTableData.removeAll(keepingCapacity: false)
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (animals as NSArray).filtered(using: searchPredicate)
+        filteredTableData = array as! [String]
+        
+        self.tableView.reloadData()
     }
 }

@@ -13,9 +13,8 @@ import CoreData
 class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var coreData = CoreDataConnection.sharedInstance
     var itemsFromCoreData: [NSManagedObject] {
-        
         get {
-            
+    
             var resultArray:Array<NSManagedObject>!
             let managedContext = coreData.persistentContainer.viewContext
             let fetchRequest =
