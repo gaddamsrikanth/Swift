@@ -73,13 +73,17 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell1", for: indexPath) as! ViewCell1
         let animalName = animals[indexPath.row]
+
         if (self.resultSearchController.isActive) {
             cell.label1.text = filteredTableData[indexPath.row]
-            
+            cell.label2.text = filteredTableData[indexPath.row]
+            cell.imgvw.image = UIImage(named: animalName)
             return cell
         }
         else {
             cell.label1.text = animalName
+            cell.imgvw.image = UIImage(named: animalName)
+            cell.label2.text = animalName
             
             return cell
         }
@@ -89,7 +93,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         print("You tapped cell number \(indexPath.row)")
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 6e0
+        return 60
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
