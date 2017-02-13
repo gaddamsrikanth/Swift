@@ -38,8 +38,9 @@
 		5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */; };
 		5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C68FE001E45BFBE00BDE7C2 /* 2.txt */; };
 		5C6FB91A1E4DC7A50007CCEF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FB9181E4DC7A50007CCEF /* Model.xcdatamodeld */; };
-		5C6FB91D1E4DCCAB0007CCEF /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FB91B1E4DCCAB0007CCEF /* CoreDataController.swift */; };
-		5C6FB91E1E4DCCAB0007CCEF /* CoreDataController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FB91C1E4DCCAB0007CCEF /* CoreDataController.xib */; };
+		5C77E42B1E5174DF00E06DF2 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E4291E5174DF00E06DF2 /* CoreDataViewController.swift */; };
+		5C77E42C1E5174DF00E06DF2 /* CoreDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C77E42A1E5174DF00E06DF2 /* CoreDataViewController.xib */; };
+		5C77E42E1E51767B00E06DF2 /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C77E42D1E51767B00E06DF2 /* CoreDataConnection.swift */; };
 		5C8F47741E405105004551DB /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47721E405105004551DB /* FourthViewController.swift */; };
 		5C8F47751E405105004551DB /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F47731E405105004551DB /* FourthViewController.xib */; };
 		5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F47771E4054A6004551DB /* ViewCell1.swift */; };
@@ -117,8 +118,9 @@
 		5C557BF61E38B7CB00EA4690 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		5C68FE001E45BFBE00BDE7C2 /* 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
 		5C6FB9191E4DC7A50007CCEF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		5C6FB91B1E4DCCAB0007CCEF /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		5C6FB91C1E4DCCAB0007CCEF /* CoreDataController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoreDataController.xib; sourceTree = "<group>"; };
+		5C77E4291E5174DF00E06DF2 /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		5C77E42A1E5174DF00E06DF2 /* CoreDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoreDataViewController.xib; sourceTree = "<group>"; };
+		5C77E42D1E51767B00E06DF2 /* CoreDataConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		5C8F47721E405105004551DB /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		5C8F47731E405105004551DB /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
 		5C8F47771E4054A6004551DB /* ViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCell1.swift; sourceTree = "<group>"; };
@@ -215,8 +217,9 @@
 				5CFC00F51E4B3B3F00DAB510 /* Animation.xib */,
 				5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */,
 				5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */,
-				5C6FB91B1E4DCCAB0007CCEF /* CoreDataController.swift */,
-				5C6FB91C1E4DCCAB0007CCEF /* CoreDataController.xib */,
+				5C77E4291E5174DF00E06DF2 /* CoreDataViewController.swift */,
+				5C77E42A1E5174DF00E06DF2 /* CoreDataViewController.xib */,
+				5C77E42D1E51767B00E06DF2 /* CoreDataConnection.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -444,7 +447,6 @@
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */,
-				5C6FB91E1E4DCCAB0007CCEF /* CoreDataController.xib in Resources */,
 				5C8F477A1E4054A7004551DB /* ViewCell1.xib in Resources */,
 				5C8F477C1E405752004551DB /* 1.json in Resources */,
 				5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */,
@@ -460,6 +462,7 @@
 				5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */,
 				5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */,
 				5C08C9F81E489882008B957D /* ViewCell4.xib in Resources */,
+				5C77E42C1E5174DF00E06DF2 /* CoreDataViewController.xib in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
 			);
@@ -495,7 +498,6 @@
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
 				5C08C9D01E48503C008B957D /* SampleViewController.swift in Sources */,
 				5C8F47741E405105004551DB /* FourthViewController.swift in Sources */,
-				5C6FB91D1E4DCCAB0007CCEF /* CoreDataController.swift in Sources */,
 				5C6FB91A1E4DC7A50007CCEF /* Model.xcdatamodeld in Sources */,
 				5C08C9E71E487E1A008B957D /* ViewCell3.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
@@ -506,8 +508,10 @@
 				5C08C9F71E489882008B957D /* ViewCell4.swift in Sources */,
 				5C08C9F11E4896E1008B957D /* MasterViewController.swift in Sources */,
 				5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */,
+				5C77E42B1E5174DF00E06DF2 /* CoreDataViewController.swift in Sources */,
 				5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */,
 				5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */,
+				5C77E42E1E51767B00E06DF2 /* CoreDataConnection.swift in Sources */,
 				5C08C9E21E487C01008B957D /* ViewCell2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -75,12 +75,6 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         //tableView.reloadData()
     }
     
-    
-    @IBAction func core(_ sender: Any) {
-        let vc = CoreDataController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     @IBAction func anim(_ sender: Any) {
         let vc = Animation()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -148,6 +142,10 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         }
     }
     
+    @IBAction func core(_ sender: Any) {
+        let vc = CoreDataViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func updt(_ sender: Any) {
         if(textField.text != "")

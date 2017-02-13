@@ -21,7 +21,11 @@ class SeventhViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
         pickerView.delegate = self
         txt1.inputView = pickerView
-
+        let f1 = txt1.frame.origin
+        txt1.frame.origin = CGPoint(x: -20, y: txt1.frame.origin.y)
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 10, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.txt1.frame.origin = f1
+        }, completion: nil)
         // Do any additional setup after loading the view.
     }
     
