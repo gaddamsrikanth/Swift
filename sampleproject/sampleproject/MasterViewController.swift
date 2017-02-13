@@ -30,8 +30,8 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     @IBAction func sbmt(_ sender: Any) {
-        let lon = t1.text
-        let la = t2.text
+        _ = t1.text
+        _ = t2.text
         
     }
     

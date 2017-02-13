@@ -19,6 +19,7 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var orgn: UIButton!
     @IBOutlet var Next: UIButton!
+    let vc = SecondViewController()
     
     fileprivate let imageManager = PHCachingImageManager()
     var fetchResult: PHFetchResult<PHAsset>!
@@ -51,7 +52,6 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
 
     
     @IBAction func next(_ sender: Any) {
-        let vc = FourthViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -84,8 +84,10 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let asset = fetchResult.object(at: indexPath.item)
-        let img = getAssetThumbnail(asset: asset)
-         
+        let img = getImage(asset: asset)
+        //let sv = SecondViewController()
+        vc.photo = img
+        //navigationController?.pushViewController(sv, animated: true)
         print("ABCD1")
     }
     func getAssetThumbnail(asset: PHAsset) -> UIImage {
@@ -98,15 +100,23 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
         })
         return thumbnail
     }
-            /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func getImage(asset: PHAsset) -> UIImage
+    {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        
+        return thumbnail
     }
-    */
+    
+ 
+
+ 
 
 }
 // MARK: PHPhotoLibraryChangeObserver

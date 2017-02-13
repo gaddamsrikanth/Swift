@@ -16,6 +16,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var refresh : UIRefreshControl!
     var timer: Timer!
     
+    @IBOutlet var cr: UIButton!
     @IBOutlet var smpl: UIButton!
     @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
@@ -75,6 +76,11 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     }
     
     
+    @IBAction func core(_ sender: Any) {
+        let vc = CoreDataController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func anim(_ sender: Any) {
         let vc = Animation()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -89,7 +95,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         lbl.text = textField.text
     }
     @IBAction func change(_ sender: UIButton!) {
-        let vc = SecondViewController()
+        let vc = ThirdViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
