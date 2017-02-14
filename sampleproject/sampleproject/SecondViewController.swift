@@ -94,7 +94,7 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         setZoomscale()
     }
     @IBAction func nextwind(_ sender: UIButton) {
-        let vc = ThirdViewController()
+        let vc = FourthViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
