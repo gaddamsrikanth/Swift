@@ -10,37 +10,22 @@ import UIKit
 import CoreData
 
 
-class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate {
+    
+    let shareData = ShareData.sharedInstance
+    var path: IndexPath = []
     var coreData = CoreDataConnection.sharedInstance
-    var itemsFromCoreData: [NSManagedObject] {
-        get {
+    var data = CoreDataConnection()
+        var items: [String] = []
+    var fetchedData = [Item]()
     
-            var resultArray:Array<NSManagedObject>!
-            let managedContext = coreData.persistentContainer.viewContext
-            let fetchRequest =
-                NSFetchRequest<NSManagedObject>(entityName: CoreDataConnection.kItem)
-            
-            let sortDescriptor = NSSortDescriptor(key:"title", ascending: true)
-            
-            fetchRequest.sortDescriptors = [sortDescriptor]
-            
-            do {
-                resultArray = try managedContext.fetch(fetchRequest)
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-            
-            return resultArray
-        }
-        
-    }
-    var items: [String] = []
-    
+    @IBOutlet var txt1: UITextField!
     @IBOutlet var btn1: UIButton!
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        txt1.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ViewCell4",bundle : nil), forCellReuseIdentifier: "ViewCell4")
@@ -48,7 +33,46 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetch()
 
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: { (action, indexPath) in
+            print("Edit tapped")
+            tableView.cellForRow(at: indexPath)?.isSelected = true
+            self.disp(i: indexPath)
+            print(indexPath[1])
+        })
+        editAction.backgroundColor = UIColor.blue
+        
+        return [editAction]
+    }
+    func disp(i: IndexPath){
+        let item = fetchedData[i.row]
+        txt1.text = item.title
+        path = i
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let item = data.itemsFromCoreData[path.row]
+        (item as! Item).title = txt1.text!
+        shareData.someString = "ABCD!"
+        coreData.editManagedObject(completion: { (success) in
+            if(success){
+                print("updated")
+                self.fetch()
+            }
+        })
+        tableView.reloadData()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txt1.resignFirstResponder()
+        return true
+    }
+    func fetch(){
+        fetchedData = data.itemsFromCoreData as! [Item]
+        tableView.reloadData()
     }
     
     @IBAction func add(_ sender: Any) {
@@ -90,7 +114,7 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return itemsFromCoreData.count
+        return fetchedData.count
     }
     
     
@@ -98,9 +122,8 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
                    cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier:"ViewCell4",for: indexPath) as! ViewCell4
-            let item = itemsFromCoreData[indexPath.row] as! Item
+            let item = fetchedData[indexPath.row]
             cell.lbl1.text = item.title
-            print("sdsfdsfdsf")
             //cell.detailTextLabel?.text = "\(item.progress)"
             return cell
     }
@@ -111,14 +134,8 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.deselectRow(at: indexPath, animated: true)
         print("here \(indexPath.row)")
         
-        let item = itemsFromCoreData[indexPath.row] as! Item
-        
-        if (item.progress == 0){
-            item.progress = 1
-        }else{
-            item.progress = 0
-        }
-        
+        let item = fetchedData[indexPath.row]
+
         coreData.saveDatabase { (success) in
             if (success) {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -138,7 +155,7 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if (editingStyle == .delete){
             
-            let item = itemsFromCoreData[indexPath.row] as! Item
+            let item = data.itemsFromCoreData[indexPath.row]
             
             coreData.deleteManagedObject(managedObject: item, completion: { (success) in
                 if (success){
