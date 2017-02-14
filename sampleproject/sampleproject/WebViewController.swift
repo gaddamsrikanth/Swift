@@ -9,29 +9,21 @@
 import UIKit
 
 class WebViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate {
-    var tf : UITextField!
+    @IBOutlet var tf: UITextField!
     var wv : UIWebView!
     var url : URL!
+    @IBOutlet var hm: UIBarButtonItem!
+    @IBOutlet var fwd: UIButton!
+    @IBOutlet var back: UIButton!
+    @IBOutlet var nav: UINavigationBar!
     var urlreq : URLRequest!
     var go : UIButton!
-    var back : UIButton!
-    var fwd : UIButton!
+    @IBOutlet var rfrsh: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tf = UITextField(frame : CGRect(x: 30,y: 80,width: UIScreen.main.bounds.width-50,height: 20))
         wv = UIWebView(frame: CGRect(x: 0,y : 100,width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-120))
-        back = UIButton(frame : CGRect(x: 0,y: 80, width: 25, height: 20))
-        back.setTitle("Back",for: .normal)
         back.addTarget(self, action: #selector(goback), for: UIControlEvents.touchDown)
-        back.backgroundColor = UIColor.red
-        
-        fwd = UIButton(frame : CGRect(x: UIScreen.main.bounds.width-25,y: 80, width: 25, height: 20))
-        fwd.setTitle("Forward",for: .normal)
         fwd.addTarget(self, action: #selector(gofwd), for: UIControlEvents.touchDown)
-        fwd.backgroundColor = UIColor.black
-        self.view.addSubview(fwd)
-        self.view.addSubview(back)
-        self.view.addSubview(tf)
         self.view.addSubview(wv)
         wv.delegate = self
         tf.delegate = self
@@ -98,7 +90,7 @@ class WebViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate
             print(tf.text!)
             }
             else{
-                let ht = "https://www."
+                let ht = "http://www."
                 let u = ht.appending(tf.text!)
                 url = URL(string: u)
                 urlreq = URLRequest(url : url!)
@@ -136,6 +128,14 @@ class WebViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate
             .absoluteString)! as NSString
         tf.text = currentURL as String
     }
+    
 
-
+    @IBAction func refresh(_ sender: Any) {
+        wv.reload()
+    }
+    
+    @IBAction func cncl(_ sender: Any) {
+    wv.stopLoading()
+    }
+    
 }
