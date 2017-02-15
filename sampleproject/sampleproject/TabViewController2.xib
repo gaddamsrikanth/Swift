@@ -22,11 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj3-Vl-qEL">
-                    <rect key="frame" x="0.0" y="127" width="375" height="540"/>
+                    <rect key="frame" x="0.0" y="135" width="375" height="532"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </mapView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaR-Q9-bPR">
-                    <rect key="frame" x="0.0" y="89" width="375" height="30"/>
+                    <rect key="frame" x="0.0" y="105" width="375" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -35,6 +35,18 @@
                         <action selector="textEdit:" destination="-1" eventType="editingDidEndOnExit" id="EIi-ns-xm6"/>
                     </connections>
                 </textField>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-P8-N67">
+                    <rect key="frame" x="0.0" y="69" width="375" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Standard"/>
+                        <segment title="Satellite"/>
+                        <segment title="Hybrid"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentedControlAction:" destination="-1" eventType="valueChanged" id="33V-mw-KiZ"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>

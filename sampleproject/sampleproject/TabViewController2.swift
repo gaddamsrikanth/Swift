@@ -59,6 +59,17 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
         map.removeAnnotations(map.annotations)
         self.performSearch()
     }
+    
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        switch ((sender as AnyObject).selectedSegmentIndex) {
+        case 0:
+            map.mapType = .standard
+        case 1:
+            map.mapType = .satellite
+        default: // or case 2
+            map.mapType = .hybrid
+        }
+    }
     func performSearch() {
         matchingItems.removeAll()
         let request = MKLocalSearchRequest()
@@ -86,11 +97,13 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = item.placemark.coordinate
                     annotation.title = item.name
+                    
                     self.map.addAnnotation(annotation)
                 }
             }
         })
     }
+    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
