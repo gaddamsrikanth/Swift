@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabViewController2" customModule="sampleproject" customModuleProvider="target">
             <connections>
-                <outlet property="v1" destination="e3A-Ne-Zvc" id="H0k-vG-pQH"/>
+                <outlet property="map" destination="kj3-Vl-qEL" id="6i9-jc-j65"/>
+                <outlet property="textFeild" destination="NaR-Q9-bPR" id="d0A-G7-m46"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,13 +21,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e3A-Ne-Zvc">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj3-Vl-qEL">
+                    <rect key="frame" x="0.0" y="127" width="375" height="540"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </mapView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaR-Q9-bPR">
+                    <rect key="frame" x="0.0" y="89" width="375" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textEdit:" destination="-1" eventType="editingDidEndOnExit" id="EIi-ns-xm6"/>
+                    </connections>
+                </textField>
             </subviews>
-            <color key="backgroundColor" red="0.2470588235" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
     </objects>

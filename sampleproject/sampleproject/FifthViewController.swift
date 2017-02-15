@@ -56,7 +56,15 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             
             let tab8 = WebViewController()
             tab8.tabBarItem = UITabBarItem(title: "tab8",image: nil,tag: 8)
-            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8]
+            
+            let tab9 = AlamJsonController()
+            tab9.tabBarItem = UITabBarItem(title: "tab9",image: nil,tag: 9)
+            
+            let tab10 = TabViewController2()
+            tab10.tabBarItem = UITabBarItem(title: "Map",image:nil,tag: 10)
+            
+            
+            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8,tab9,tab10]
         }
         
         // UITabBarControllerDelegate method

@@ -27,6 +27,7 @@ class WebViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate
         self.view.addSubview(wv)
         wv.delegate = self
         tf.delegate = self
+        tf.autocorrectionType = .no
         url = URL(string: "www.google.com")
         urlreq = URLRequest(url : url!)
         wv.loadRequest(urlreq)
@@ -81,7 +82,7 @@ class WebViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         let str = tf.text
-        let reg = "^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9].[a-zA-Z]$"
+        let reg = "^.[a-zA-Z]$"
             if (!NSPredicate(format: "SELF MATCHES %@", reg).evaluate(with: str)){
             if tf.text?.range(of:"https://") != nil{
             url = URL(string: tf.text!)
