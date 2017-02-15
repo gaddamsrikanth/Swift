@@ -22,15 +22,16 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
             locationmanager.desiredAccuracy = kCLLocationAccuracyBest
             locationmanager.requestWhenInUseAuthorization()
             locationmanager.requestLocation()
-       let a = locationmanager.location!.coordinate.latitude
-    let b = locationmanager.location!.coordinate.longitude
+            
+            let a = locationmanager.location!.coordinate.latitude
+            let b = locationmanager.location!.coordinate.longitude
             print(a)
             print(b)
             let locationOne = CLLocationCoordinate2DMake(a, b)
             let annotation = MKPointAnnotation()
+            map.removeAnnotation(annotation as MKAnnotation)
             annotation.coordinate = locationOne
             map.addAnnotation(annotation as MKAnnotation)
-            
             
         }
     
@@ -70,6 +71,8 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
             map.mapType = .hybrid
         }
     }
+    
+    
     func performSearch() {
         matchingItems.removeAll()
         let request = MKLocalSearchRequest()
@@ -96,8 +99,8 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
                     
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = item.placemark.coordinate
-                    annotation.title = item.name
-                    
+                    annotation.title = item.name!
+                    print(annotation.coordinate)
                     self.map.addAnnotation(annotation)
                 }
             }
