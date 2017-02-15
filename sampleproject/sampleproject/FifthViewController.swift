@@ -54,7 +54,9 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             let tab7 = SeventhViewController()
             tab7.tabBarItem = UITabBarItem(title:"tab7",image:nil,tag:7)
             
-            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7]
+            let tab8 = WebViewController()
+            tab8.tabBarItem = UITabBarItem(title: "tab8",image: nil,tag: 8)
+            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8]
         }
         
         // UITabBarControllerDelegate method

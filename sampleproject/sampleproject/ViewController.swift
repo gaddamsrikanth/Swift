@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UISearchResultsUpdating {
-    
+    let shareData = ShareData.sharedInstance
     let section1 = ["pizza", "deep dish pizza", "calzone"]
     var animals : [String] = ["Apple","Apricot","food","D"]
     let cellReuseIdentifier = "cell"
@@ -17,8 +17,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     var timer: Timer!
     var filteredTableData = [String]()
     var resultSearchController = UISearchController()
-    
-    @IBOutlet var cr: UIButton!
+
     @IBOutlet var smpl: UIButton!
     @IBOutlet var swtch: UISwitch!
     @IBOutlet var updt: UIButton!
@@ -27,7 +26,6 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     @IBOutlet var lbl: UILabel!
-    
     @IBOutlet var anm: UIButton!
     
     var selected: Int?
@@ -38,9 +36,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
-            
             self.tableView.tableHeaderView = controller.searchBar
-            
             return controller
         })()
         refresh = UIRefreshControl()
@@ -120,6 +116,7 @@ class ViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,
         lbl.text = textField.text
     }
     @IBAction func change(_ sender: UIButton!) {
+        shareData.someString = "ABCD"
         let vc = ThirdViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

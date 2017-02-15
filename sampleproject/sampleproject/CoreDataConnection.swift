@@ -10,12 +10,35 @@ import UIKit
 import CoreData
 
 class CoreDataConnection: NSObject {
+    let shareData = ShareData.sharedInstance
     static let sharedInstance = CoreDataConnection()
     static let kItem = "Item"
     static let kFilename = "Model"
     
     // MARK: - Core Data stack
-    
+    var itemsFromCoreData: [NSManagedObject] {
+        get {
+            
+            var resultArray:Array<NSManagedObject>!
+            let managedContext = self.persistentContainer.viewContext
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: CoreDataConnection.kItem)
+            
+            let sortDescriptor = NSSortDescriptor(key:"title", ascending: true)
+            
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            
+            do {
+                resultArray = try managedContext.fetch(fetchRequest)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+            
+            return resultArray
+        }
+        
+    }
+
     lazy var persistentContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: CoreDataConnection.kFilename)
@@ -76,6 +99,20 @@ class CoreDataConnection: NSObject {
         
     }
     
+    func editManagedObject(completion:(_ result: Bool ) -> Void) {
+        print(shareData.someString)
+        let managedContext =
+            CoreDataConnection.sharedInstance.persistentContainer.viewContext
+        do{
+            try managedContext.save()
+             completion(true)
+        }catch{
+            completion(false)
+        }
+        
+    }
+
+        
     func deleteManagedObject( managedObject: NSManagedObject, completion:(_ result: Bool ) -> Void) {
         
         let managedContext =

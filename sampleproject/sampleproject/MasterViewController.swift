@@ -29,11 +29,7 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     
-    @IBAction func sbmt(_ sender: Any) {
-        _ = t1.text
-        _ = t2.text
-        
-    }
+    
     
     @IBAction func shr(_ sender: Any) {
         let url = NSURL.fileURL(withPath: "/Users/itilak/Desktop/swift/sampleproject/sampleproject/1.txt")

@@ -20,7 +20,7 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet var orgn: UIButton!
     @IBOutlet var Next: UIButton!
     let vc = SecondViewController()
-    
+    let shareData = ShareData.sharedInstance
     fileprivate let imageManager = PHCachingImageManager()
     var fetchResult: PHFetchResult<PHAsset>!
     var assetCollection: PHAssetCollection!
@@ -29,6 +29,7 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(shareData.someString)
         let allPhotosOptions = PHFetchOptions()
         allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
