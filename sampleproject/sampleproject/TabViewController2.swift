@@ -44,11 +44,12 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         point1.title = "Start"
         map.addAnnotation(point1)
         
-        cord = String(describing: annotation.coordinate)
+        cord = String(describing: annotation.coordinate.latitude)
         point2.coordinate = annotation.coordinate
         point2.title = "End"
         map.addAnnotation(point2)
 
+             region()
             let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
             lpgr.minimumPressDuration = 0.5
             lpgr.delaysTouchesBegan = true
@@ -59,7 +60,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         
         let end = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
             
-        
         directionsRequest.source = MKMapItem(placemark: start)
         directionsRequest.destination = MKMapItem(placemark: end)
         directionsRequest.transportType = MKDirectionsTransportType.automobile
@@ -88,10 +88,10 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
             
     }
     func region(){
-    if(cord == "")
+    if(cord == "0.0")
     {
-        print("ABCD")
         map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        
         }
     else{
         map.setRegion(MKCoordinateRegionMake(point2.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
