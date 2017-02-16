@@ -16,8 +16,9 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
     var a : CLLocationCoordinate2D!
     var b : CLLocationCoordinate2D!
     var point2 = MKPointAnnotation()
+    var point1 = MKPointAnnotation()
     var matchingItems: [MKMapItem] = [MKMapItem]()
-    var cord : [CLLocationCoordinate2D] = []
+    var cord : String!
     var count = 0
     let locationmanager = CLLocationManager()
     var ph : String!
@@ -39,16 +40,15 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         let b = locationmanager.location!.coordinate.longitude
         let locationOne = CLLocationCoordinate2DMake(a, b)
         
-        let point1 = MKPointAnnotation()
         point1.coordinate = locationOne
         point1.title = "Start"
         map.addAnnotation(point1)
         
+        cord = String(describing: annotation.coordinate)
         point2.coordinate = annotation.coordinate
         point2.title = "End"
         map.addAnnotation(point2)
-        map.centerCoordinate = point2.coordinate
-            
+
             let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
             lpgr.minimumPressDuration = 0.5
             lpgr.delaysTouchesBegan = true
@@ -59,7 +59,7 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         
         let end = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
             
-        map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        
         directionsRequest.source = MKMapItem(placemark: start)
         directionsRequest.destination = MKMapItem(placemark: end)
         directionsRequest.transportType = MKDirectionsTransportType.automobile
@@ -87,7 +87,16 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         })
             
     }
-    
+    func region(){
+    if(cord == "")
+    {
+        print("ABCD")
+        map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        }
+    else{
+        map.setRegion(MKCoordinateRegionMake(point2.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        }
+    }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
     {
         if !(annotation is MKPointAnnotation) {
@@ -125,9 +134,17 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let t = String(self.myRoute.expectedTravelTime)
         let dist = String(myRoute.distance)
+        if(loc != nil){
         let ac = UIAlertController(title: "Welcome to \(loc!) \n Distance: \(dist) \n Estimate Time: \(t)", message: ph, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
+        }
+        else{
+            let ac = UIAlertController(title: "Distance: \(dist) \n Estimate Time: \(t)", message: "", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+        
     }
 
     
@@ -161,13 +178,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         default: // or case 2
             map.mapType = .hybrid
         }
-    }
-    
-    @IBAction func revealRegionDetailsWithLongPressOnMap(sender: UILongPressGestureRecognizer) {
-        if sender.state != UIGestureRecognizerState.began { return }
-        let touchLocation = sender.location(in: map)
-        let locationCoordinate = map.convert(touchLocation, toCoordinateFrom: map)
-        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
     }
     
     func performSearch() {
@@ -209,15 +219,19 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         if gestureReconizer.state != UIGestureRecognizerState.ended {
             let touchLocation = gestureReconizer.location(in: map)
             let locationCoordinate = map.convert(touchLocation,toCoordinateFrom: map)
+            annotation.coordinate = locationCoordinate
             let ac = UIAlertController(title: "You tapped at", message: "Latitude:\(locationCoordinate.latitude)  Longitude: \(locationCoordinate.longitude)", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
+            self.viewDidLoad()
             return
         }
         if gestureReconizer.state != UIGestureRecognizerState.began {
             return
         }
+        
     }
+    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
