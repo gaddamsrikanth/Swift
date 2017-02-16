@@ -9,73 +9,124 @@ import MapKit
 import UIKit
 
 class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate {
+    
     var myRoute : MKRoute!
     var directionsRequest = MKDirectionsRequest()
-
+    var annotation = MKPointAnnotation()
     var a : CLLocationCoordinate2D!
     var b : CLLocationCoordinate2D!
-    let locationmanager = CLLocationManager()
-    @IBOutlet var map: MKMapView!
+    var point2 = MKPointAnnotation()
     var matchingItems: [MKMapItem] = [MKMapItem]()
     var cord : [CLLocationCoordinate2D] = []
+    var count = 0
+    let locationmanager = CLLocationManager()
+    var distanceInMeters : Int!
+    var ph : String!
+    var loc : String!
+    
+    @IBOutlet var map: MKMapView!
     @IBOutlet var textFeild: UITextField!
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             map.delegate = self
-            let point1 = MKPointAnnotation()
-            let point2 = MKPointAnnotation()
-          
+            
             locationmanager.delegate = self
             locationmanager.desiredAccuracy = kCLLocationAccuracyBest
             locationmanager.requestWhenInUseAuthorization()
             locationmanager.requestLocation()
             
-            let a = locationmanager.location!.coordinate.latitude
-            let b = locationmanager.location!.coordinate.longitude
-            let locationOne = CLLocationCoordinate2DMake(a, b)
-            point1.coordinate = locationOne
-            point1.title = "Mumbai"
-            map.addAnnotation(point1)
+        let a = locationmanager.location!.coordinate.latitude
+        let b = locationmanager.location!.coordinate.longitude
+        let locationOne = CLLocationCoordinate2DMake(a, b)
+        
+        let point1 = MKPointAnnotation()
+        point1.coordinate = locationOne
+        point1.title = "Start"
+        map.addAnnotation(point1)
+        
+        point2.coordinate = annotation.coordinate
+        point2.title = "End"
+        map.addAnnotation(point2)
+        map.centerCoordinate = point2.coordinate
+        
+        let start = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point1.coordinate.latitude, point1.coordinate.longitude), addressDictionary: nil)
+        
+        let end = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
             
-            point2.coordinate = CLLocationCoordinate2DMake(40.063700, -75.646277)
-            point2.title = "Surat"
-            map.addAnnotation(point2)
-            map.centerCoordinate = point2.coordinate
-
-            let mumbai = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point1.coordinate.latitude, point1.coordinate.longitude), addressDictionary: nil)
-            
-            let surat = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
-            
-            map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
-            directionsRequest.source = MKMapItem(placemark: mumbai)
-            directionsRequest.destination = MKMapItem(placemark: surat)
-            
-            directionsRequest.transportType = MKDirectionsTransportType.automobile
-            let directions = MKDirections(request: directionsRequest)
-            
-            directions.calculate(completionHandler: {
-                response, error in
-                
-                if error == nil {
+        map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        
+        directionsRequest.source = MKMapItem(placemark: start)
+        directionsRequest.destination = MKMapItem(placemark: end)
+        directionsRequest.transportType = MKDirectionsTransportType.automobile
+        let directions = MKDirections(request: directionsRequest)
+        
+        directions.calculate(completionHandler: {
+            response, error in
+            if error == nil {
+                if(self.count == 0){
+                self.myRoute = response!.routes[0] as MKRoute
+                self.map.add(self.myRoute.polyline)
+                    self.count = self.count+1
+            }
+                else{
+                self.map.remove(self.myRoute.polyline)
                     self.myRoute = response!.routes[0] as MKRoute
-                    print("Route")
                     self.map.add(self.myRoute.polyline)
                 }
-                else{
+            }
+            else{
                 print("Error")
-                }
-                
-            })
+            }
+            
+        })
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        let pinImage = UIImage(named: "location")
+        annotationView!.image = pinImage
+        annotationView!.isEnabled = true
+        annotationView!.canShowCallout = true
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView?.rightCalloutAccessoryView = btn
+        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        
         let myLineRenderer = MKPolylineRenderer(polyline: myRoute.polyline)
+        let a = (myRoute.distance)/1000
+//        let dist = String(a)
+//        print(dist)
+        let sp = " "
+        annotation.title?.append(sp)
+        //annotation.title?.append(dist)
         myLineRenderer.strokeColor = UIColor.red
         myLineRenderer.lineWidth = 3
         return myLineRenderer
     }
-            
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let ac = UIAlertController(title: "Welcome to \(loc!)", message: ph, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse
@@ -109,7 +160,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    
     func performSearch() {
         matchingItems.removeAll()
         let request = MKLocalSearchRequest()
@@ -128,15 +178,19 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
                 print("Matches found")
                 
                 for item in response!.mapItems {
-                    print("Name = \(item.name)")
-                    print("Phone = \(item.phoneNumber)")
+                    //print("Name = \(item.name)")
+                    //print("Phone = \(item.phoneNumber)")
                     
                     self.matchingItems.append(item as MKMapItem)
-                    print("Matching items = \(self.matchingItems.count)")
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = item.placemark.coordinate
-                    annotation.title = item.name!
-                self.map.addAnnotation(annotation)
+                    //print("Matching items = \(self.matchingItems.count)")
+                    self.annotation.coordinate = self.matchingItems[0].placemark.coordinate
+                    self.ph = item.phoneNumber!
+                    self.loc = item.name
+                    print(self.ph)
+                    self.annotation.title = item.name!
+                    self.viewDidLoad()
+                    self.map.addAnnotation(self.annotation)
+                    
                 }
             }
         })
