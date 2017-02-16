@@ -56,7 +56,7 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
         directionsRequest.source = MKMapItem(placemark: start)
         directionsRequest.destination = MKMapItem(placemark: end)
-        directionsRequest.transportType = MKDirectionsTransportType.automobile
+        directionsRequest.transportType = MKDirectionsTransportType.walking
         let directions = MKDirections(request: directionsRequest)
         
         directions.calculate(completionHandler: {
