@@ -134,7 +134,7 @@ class CoreDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.deselectRow(at: indexPath, animated: true)
         print("here \(indexPath.row)")
         
-        let item = fetchedData[indexPath.row]
+        _ = fetchedData[indexPath.row]
 
         coreData.saveDatabase { (success) in
             if (success) {
