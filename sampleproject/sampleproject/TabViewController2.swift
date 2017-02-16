@@ -20,7 +20,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
     var cord : [CLLocationCoordinate2D] = []
     var count = 0
     let locationmanager = CLLocationManager()
-    var distanceInMeters : Int!
     var ph : String!
     var loc : String!
     
@@ -55,7 +54,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         let end = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
             
         map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
-        
         directionsRequest.source = MKMapItem(placemark: start)
         directionsRequest.destination = MKMapItem(placemark: end)
         directionsRequest.transportType = MKDirectionsTransportType.automobile
@@ -67,7 +65,7 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
                 if(self.count == 0){
                 self.myRoute = response!.routes[0] as MKRoute
                 self.map.add(self.myRoute.polyline)
-                    self.count = self.count+1
+                self.count = self.count+1
             }
                 else{
                 self.map.remove(self.myRoute.polyline)
@@ -80,7 +78,9 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
             }
             
         })
+            
     }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
     {
         if !(annotation is MKPointAnnotation) {
@@ -108,21 +108,17 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
         let myLineRenderer = MKPolylineRenderer(polyline: myRoute.polyline)
-        let a = (myRoute.distance)/1000
-//        let dist = String(a)
-//        print(dist)
-        let sp = " "
-        annotation.title?.append(sp)
-        //annotation.title?.append(dist)
         myLineRenderer.strokeColor = UIColor.red
         myLineRenderer.lineWidth = 3
         return myLineRenderer
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        let ac = UIAlertController(title: "Welcome to \(loc!)", message: ph, preferredStyle: .alert)
+        let t = String(self.myRoute.expectedTravelTime)
+        let dist = String(myRoute.distance)
+        let ac = UIAlertController(title: "Welcome to \(loc!) \n Distance: \(dist) \n Estimate Time: \(t)", message: ph, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
@@ -178,16 +174,16 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
                 print("Matches found")
                 
                 for item in response!.mapItems {
-                    //print("Name = \(item.name)")
-                    //print("Phone = \(item.phoneNumber)")
-                    
                     self.matchingItems.append(item as MKMapItem)
-                    //print("Matching items = \(self.matchingItems.count)")
                     self.annotation.coordinate = self.matchingItems[0].placemark.coordinate
+                    if(item.phoneNumber != nil){
                     self.ph = item.phoneNumber!
+                    }
+                    else{
+                    self.ph = ""
+                    }
                     self.loc = item.name
-                    print(self.ph)
-                    self.annotation.title = item.name!
+                    self.annotation.title = self.loc!
                     self.viewDidLoad()
                     self.map.addAnnotation(self.annotation)
                     
