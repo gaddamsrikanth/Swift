@@ -63,8 +63,10 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             let tab10 = TabViewController2()
             tab10.tabBarItem = UITabBarItem(title: "Map",image:nil,tag: 10)
             
+            let tab11 = LazyViewController()
+            tab11.tabBarItem = UITabBarItem(title: "Lazy",image:nil,tag: 11)
             
-            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8,tab9,tab10]
+            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8,tab9,tab10,tab11]
         }
         
         // UITabBarControllerDelegate method
