@@ -8,32 +8,145 @@
 import MapKit
 import UIKit
 
-class TabViewController2: UIViewController,CLLocationManagerDelegate {
+class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
+    
+    var myRoute : MKRoute!
+    var directionsRequest = MKDirectionsRequest()
+    var annotation = MKPointAnnotation()
     var a : CLLocationCoordinate2D!
     var b : CLLocationCoordinate2D!
-    let locationmanager = CLLocationManager()
-    @IBOutlet var map: MKMapView!
+    var point2 = MKPointAnnotation()
+    var point1 = MKPointAnnotation()
     var matchingItems: [MKMapItem] = [MKMapItem]()
+    var cord : String!
+    var count = 0
+    let locationmanager = CLLocationManager()
+    var ph : String!
+    var loc : String!
     
+    @IBOutlet var map: MKMapView!
     @IBOutlet var textFeild: UITextField!
+    
         override func viewDidLoad() {
             super.viewDidLoad()
+            map.delegate = self
+            
             locationmanager.delegate = self
             locationmanager.desiredAccuracy = kCLLocationAccuracyBest
             locationmanager.requestWhenInUseAuthorization()
             locationmanager.requestLocation()
             
-            let a = locationmanager.location!.coordinate.latitude
-            let b = locationmanager.location!.coordinate.longitude
-            print(a)
-            print(b)
-            let locationOne = CLLocationCoordinate2DMake(a, b)
-            let annotation = MKPointAnnotation()
-            map.removeAnnotation(annotation as MKAnnotation)
-            annotation.coordinate = locationOne
-            map.addAnnotation(annotation as MKAnnotation)
+        let a = locationmanager.location!.coordinate.latitude
+        let b = locationmanager.location!.coordinate.longitude
+        let locationOne = CLLocationCoordinate2DMake(a, b)
+        
+        point1.coordinate = locationOne
+        point1.title = "Start"
+        map.addAnnotation(point1)
+        
+        cord = String(describing: annotation.coordinate.latitude)
+        point2.coordinate = annotation.coordinate
+        point2.title = "End"
+        map.addAnnotation(point2)
+
+             region()
+            let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
+            lpgr.minimumPressDuration = 0.5
+            lpgr.delaysTouchesBegan = true
+            lpgr.delegate = self
+            self.map.addGestureRecognizer(lpgr)
+        
+        let start = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point1.coordinate.latitude, point1.coordinate.longitude), addressDictionary: nil)
+        
+        let end = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
             
+        directionsRequest.source = MKMapItem(placemark: start)
+        directionsRequest.destination = MKMapItem(placemark: end)
+        directionsRequest.transportType = MKDirectionsTransportType.automobile
+            
+        let directions = MKDirections(request: directionsRequest)
+        
+        directions.calculate(completionHandler: {
+            response, error in
+            if error == nil {
+                if(self.count == 0){
+                self.myRoute = response!.routes[0] as MKRoute
+                self.map.add(self.myRoute.polyline)
+                self.count = self.count+1
+            }
+                else{
+                self.map.remove(self.myRoute.polyline)
+                    self.myRoute = response!.routes[0] as MKRoute
+                    self.map.add(self.myRoute.polyline)
+                }
+            }
+            else{
+                print("Error")
+            }
+            
+        })
+            
+    }
+    func region(){
+    if(cord == "0.0")
+    {
+        map.setRegion(MKCoordinateRegionMake(point1.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        
         }
+    else{
+        map.setRegion(MKCoordinateRegionMake(point2.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        }
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        let pinImage = UIImage(named: "location")
+        annotationView!.image = pinImage
+        annotationView!.isEnabled = true
+        annotationView!.canShowCallout = true
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView?.rightCalloutAccessoryView = btn
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let myLineRenderer = MKPolylineRenderer(polyline: myRoute.polyline)
+        myLineRenderer.strokeColor = UIColor.red
+        myLineRenderer.lineWidth = 3
+        return myLineRenderer
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let t = String(self.myRoute.expectedTravelTime)
+        let dist = String(myRoute.distance)
+        if(loc != nil){
+        let ac = UIAlertController(title: "Welcome to \(loc!) \n Distance: \(dist) \n Estimate Time: \(t)", message: ph, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        }
+        else{
+            let ac = UIAlertController(title: "Distance: \(dist) \n Estimate Time: \(t)", message: "", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+        
+    }
+
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse
@@ -47,11 +160,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first{
-        let span = MKCoordinateSpanMake(0.5, 0.5)
-        let region = MKCoordinateRegionMake(location.coordinate, span)
-            map.setRegion(region, animated: true)
-        }
         
     }
     
@@ -72,7 +180,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
         }
     }
     
-    
     func performSearch() {
         matchingItems.removeAll()
         let request = MKLocalSearchRequest()
@@ -91,20 +198,38 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate {
                 print("Matches found")
                 
                 for item in response!.mapItems {
-                    print("Name = \(item.name)")
-                    print("Phone = \(item.phoneNumber)")
-                    
                     self.matchingItems.append(item as MKMapItem)
-                    print("Matching items = \(self.matchingItems.count)")
+                    self.annotation.coordinate = self.matchingItems[0].placemark.coordinate
+                    if(item.phoneNumber != nil){
+                    self.ph = item.phoneNumber!
+                    }
+                    else{
+                    self.ph = ""
+                    }
+                    self.loc = item.name
+                    self.annotation.title = self.loc!
+                    self.viewDidLoad()
+                    self.map.addAnnotation(self.annotation)
                     
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = item.placemark.coordinate
-                    annotation.title = item.name!
-                    print(annotation.coordinate)
-                    self.map.addAnnotation(annotation)
                 }
             }
         })
+    }
+    func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            let touchLocation = gestureReconizer.location(in: map)
+            let locationCoordinate = map.convert(touchLocation,toCoordinateFrom: map)
+            annotation.coordinate = locationCoordinate
+            let ac = UIAlertController(title: "You tapped at", message: "Latitude:\(locationCoordinate.latitude)  Longitude: \(locationCoordinate.longitude)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            self.viewDidLoad()
+            return
+        }
+        if gestureReconizer.state != UIGestureRecognizerState.began {
+            return
+        }
+        
     }
     
         override func didReceiveMemoryWarning() {

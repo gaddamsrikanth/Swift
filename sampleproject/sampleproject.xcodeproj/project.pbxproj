@@ -30,27 +30,6 @@
 		5C44B8211E54203D002EFD33 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8201E54203D002EFD33 /* SwiftyJSON.swift */; };
 		5C44B8241E542232002EFD33 /* AlamJsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8221E542232002EFD33 /* AlamJsonController.swift */; };
 		5C44B8251E542232002EFD33 /* AlamJsonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C44B8231E542232002EFD33 /* AlamJsonController.xib */; };
-		5C44B88B1E542CE7002EFD33 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8771E542CE7002EFD33 /* AFError.swift */; };
-		5C44B88C1E542CE7002EFD33 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8791E542CE7002EFD33 /* Alamofire.swift */; };
-		5C44B88D1E542CE7002EFD33 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B87A1E542CE7002EFD33 /* DispatchQueue+Alamofire.swift */; };
-		5C44B88E1E542CE7002EFD33 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C44B87B1E542CE7002EFD33 /* Info-tvOS.plist */; };
-		5C44B88F1E542CE7002EFD33 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C44B87C1E542CE7002EFD33 /* Info.plist */; };
-		5C44B8901E542CE7002EFD33 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B87D1E542CE7002EFD33 /* MultipartFormData.swift */; };
-		5C44B8911E542CE7002EFD33 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B87E1E542CE7002EFD33 /* NetworkReachabilityManager.swift */; };
-		5C44B8921E542CE7002EFD33 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B87F1E542CE7002EFD33 /* Notifications.swift */; };
-		5C44B8931E542CE7002EFD33 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8801E542CE7002EFD33 /* ParameterEncoding.swift */; };
-		5C44B8941E542CE7002EFD33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8811E542CE7002EFD33 /* Request.swift */; };
-		5C44B8951E542CE7002EFD33 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8821E542CE7002EFD33 /* Response.swift */; };
-		5C44B8961E542CE7002EFD33 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8831E542CE7002EFD33 /* ResponseSerialization.swift */; };
-		5C44B8971E542CE7002EFD33 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8841E542CE7002EFD33 /* Result.swift */; };
-		5C44B8981E542CE7002EFD33 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8851E542CE7002EFD33 /* ServerTrustPolicy.swift */; };
-		5C44B8991E542CE7002EFD33 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8861E542CE7002EFD33 /* SessionDelegate.swift */; };
-		5C44B89A1E542CE7002EFD33 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8871E542CE7002EFD33 /* SessionManager.swift */; };
-		5C44B89B1E542CE7002EFD33 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8881E542CE7002EFD33 /* TaskDelegate.swift */; };
-		5C44B89C1E542CE7002EFD33 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B8891E542CE7002EFD33 /* Timeline.swift */; };
-		5C44B89D1E542CE7002EFD33 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B88A1E542CE7002EFD33 /* Validation.swift */; };
-		5C44B8A11E546289002EFD33 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B89F1E546289002EFD33 /* Station.swift */; };
-		5C44B8A21E546289002EFD33 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C44B8A01E546289002EFD33 /* stations.plist */; };
 		5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */; };
 		5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A62A91E388F3B000B36C3 /* ViewController.swift */; };
 		5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A62AB1E388F3B000B36C3 /* Main.storyboard */; };
@@ -86,6 +65,7 @@
 		5CD74A1F1E3CC739003C68C1 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */; };
 		5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */; };
 		5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */; };
+		5CF408461E55BDE900AD4FFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF408451E55BDE900AD4FFB /* Info.plist */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
 /* End PBXBuildFile section */
@@ -131,35 +111,12 @@
 		5C44B8201E54203D002EFD33 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		5C44B8221E542232002EFD33 /* AlamJsonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamJsonController.swift; sourceTree = "<group>"; };
 		5C44B8231E542232002EFD33 /* AlamJsonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlamJsonController.xib; sourceTree = "<group>"; };
-		5C44B8771E542CE7002EFD33 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
-		5C44B8781E542CE7002EFD33 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
-		5C44B8791E542CE7002EFD33 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		5C44B87A1E542CE7002EFD33 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		5C44B87B1E542CE7002EFD33 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
-		5C44B87C1E542CE7002EFD33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C44B87D1E542CE7002EFD33 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		5C44B87E1E542CE7002EFD33 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		5C44B87F1E542CE7002EFD33 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		5C44B8801E542CE7002EFD33 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		5C44B8811E542CE7002EFD33 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		5C44B8821E542CE7002EFD33 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		5C44B8831E542CE7002EFD33 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		5C44B8841E542CE7002EFD33 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		5C44B8851E542CE7002EFD33 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		5C44B8861E542CE7002EFD33 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
-		5C44B8871E542CE7002EFD33 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		5C44B8881E542CE7002EFD33 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
-		5C44B8891E542CE7002EFD33 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
-		5C44B88A1E542CE7002EFD33 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		5C44B89F1E546289002EFD33 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
-		5C44B8A01E546289002EFD33 /* stations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stations.plist; sourceTree = "<group>"; };
 		5C4A62A41E388F3B000B36C3 /* sampleproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C4A62A91E388F3B000B36C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C4A62AC1E388F3B000B36C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C4A62AE1E388F3B000B36C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C4A62B11E388F3B000B36C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5C4A62B31E388F3B000B36C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4A62B81E388F3C000B36C3 /* sampleprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4A62BC1E388F3C000B36C3 /* sampleprojectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleprojectTests.swift; sourceTree = "<group>"; };
 		5C4A62BE1E388F3C000B36C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,6 +151,7 @@
 		5CD74A1D1E3CC739003C68C1 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 		5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeventhViewController.xib; sourceTree = "<group>"; };
+		5CF408451E55BDE900AD4FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFC00F41E4B3B3F00DAB510 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		5CFC00F51E4B3B3F00DAB510 /* Animation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animation.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +224,7 @@
 				5C08C9F91E489A85008B957D /* DetailViewController.swift */,
 				5C08C9FA1E489A85008B957D /* DetailViewController.xib */,
 				5C4A62A71E388F3B000B36C3 /* AppDelegate.swift */,
+				5CF408451E55BDE900AD4FFB /* Info.plist */,
 				5C6FB9181E4DC7A50007CCEF /* Model.xcdatamodeld */,
 				5C4A62A91E388F3B000B36C3 /* ViewController.swift */,
 				5C4A62D51E3891DD000B36C3 /* View.xib */,
@@ -294,33 +253,6 @@
 			name = Cell4;
 			sourceTree = "<group>";
 		};
-		5C44B8761E542CE7002EFD33 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				5C44B8771E542CE7002EFD33 /* AFError.swift */,
-				5C44B8781E542CE7002EFD33 /* Alamofire.h */,
-				5C44B8791E542CE7002EFD33 /* Alamofire.swift */,
-				5C44B87A1E542CE7002EFD33 /* DispatchQueue+Alamofire.swift */,
-				5C44B87B1E542CE7002EFD33 /* Info-tvOS.plist */,
-				5C44B87C1E542CE7002EFD33 /* Info.plist */,
-				5C44B87D1E542CE7002EFD33 /* MultipartFormData.swift */,
-				5C44B87E1E542CE7002EFD33 /* NetworkReachabilityManager.swift */,
-				5C44B87F1E542CE7002EFD33 /* Notifications.swift */,
-				5C44B8801E542CE7002EFD33 /* ParameterEncoding.swift */,
-				5C44B8811E542CE7002EFD33 /* Request.swift */,
-				5C44B8821E542CE7002EFD33 /* Response.swift */,
-				5C44B8831E542CE7002EFD33 /* ResponseSerialization.swift */,
-				5C44B8841E542CE7002EFD33 /* Result.swift */,
-				5C44B8851E542CE7002EFD33 /* ServerTrustPolicy.swift */,
-				5C44B8861E542CE7002EFD33 /* SessionDelegate.swift */,
-				5C44B8871E542CE7002EFD33 /* SessionManager.swift */,
-				5C44B8881E542CE7002EFD33 /* TaskDelegate.swift */,
-				5C44B8891E542CE7002EFD33 /* Timeline.swift */,
-				5C44B88A1E542CE7002EFD33 /* Validation.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		5C4A629B1E388F3A000B36C3 = {
 			isa = PBXGroup;
 			children = (
@@ -344,7 +276,6 @@
 		5C4A62A61E388F3B000B36C3 /* sampleproject */ = {
 			isa = PBXGroup;
 			children = (
-				5C44B8761E542CE7002EFD33 /* Source */,
 				5CFC00F31E4B3ACD00DAB510 /* Cells */,
 				5C08C9F31E489717008B957D /* Controllers */,
 				5C2CBF701E459DFA002CB43B /* 1.txt */,
@@ -353,7 +284,6 @@
 				5C4A62AB1E388F3B000B36C3 /* Main.storyboard */,
 				5C4A62AE1E388F3B000B36C3 /* Assets.xcassets */,
 				5C4A62B01E388F3B000B36C3 /* LaunchScreen.storyboard */,
-				5C4A62B31E388F3B000B36C3 /* Info.plist */,
 				5C8F477B1E405752004551DB /* 1.json */,
 			);
 			path = sampleproject;
@@ -392,8 +322,6 @@
 				5C68FE001E45BFBE00BDE7C2 /* 2.txt */,
 				5C8F47821E4076F7004551DB /* TabViewController1.swift */,
 				5C8F47831E4076F7004551DB /* TabViewController1.xib */,
-				5C44B89F1E546289002EFD33 /* Station.swift */,
-				5C44B8A01E546289002EFD33 /* stations.plist */,
 				5C8F47861E407707004551DB /* TabViewController2.swift */,
 				5C8F47871E407707004551DB /* TabViewController2.xib */,
 			);
@@ -544,7 +472,6 @@
 				5C8F477C1E405752004551DB /* 1.json in Resources */,
 				5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */,
 				5C08C9FC1E489A85008B957D /* DetailViewController.xib in Resources */,
-				5C44B88F1E542CE7002EFD33 /* Info.plist in Resources */,
 				5C8F47891E407707004551DB /* TabViewController2.xib in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
 				5C08C9D11E48503C008B957D /* SampleViewController.xib in Resources */,
@@ -553,14 +480,13 @@
 				5CA03A7F1E3F6AB100755207 /* myFile.txt in Resources */,
 				5C4A62AD1E388F3B000B36C3 /* Main.storyboard in Resources */,
 				5C08C9F21E4896E1008B957D /* MasterViewController.xib in Resources */,
-				5C44B88E1E542CE7002EFD33 /* Info-tvOS.plist in Resources */,
 				5C68FE011E45BFBE00BDE7C2 /* 2.txt in Resources */,
-				5C44B8A21E546289002EFD33 /* stations.plist in Resources */,
 				5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */,
 				5C08C9F81E489882008B957D /* ViewCell4.xib in Resources */,
 				5C77E42C1E5174DF00E06DF2 /* CoreDataViewController.xib in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
+				5CF408461E55BDE900AD4FFB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,48 +513,30 @@
 			files = (
 				5C8F477F1E4071BB004551DB /* FifthViewController.swift in Sources */,
 				5C8F47881E407707004551DB /* TabViewController2.swift in Sources */,
-				5C44B89B1E542CE7002EFD33 /* TaskDelegate.swift in Sources */,
-				5C44B8901E542CE7002EFD33 /* MultipartFormData.swift in Sources */,
 				5C28A47E1E444F8100152411 /* InstructionView.swift in Sources */,
 				5CA03A7A1E3F3FAE00755207 /* ViewCell.swift in Sources */,
-				5C44B8951E542CE7002EFD33 /* Response.swift in Sources */,
 				5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */,
 				5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */,
-				5C44B8931E542CE7002EFD33 /* ParameterEncoding.swift in Sources */,
-				5C44B8911E542CE7002EFD33 /* NetworkReachabilityManager.swift in Sources */,
-				5C44B88C1E542CE7002EFD33 /* Alamofire.swift in Sources */,
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
-				5C44B89D1E542CE7002EFD33 /* Validation.swift in Sources */,
 				5C08C9D01E48503C008B957D /* SampleViewController.swift in Sources */,
 				5C8F47741E405105004551DB /* FourthViewController.swift in Sources */,
 				5C6FB91A1E4DC7A50007CCEF /* Model.xcdatamodeld in Sources */,
-				5C44B88D1E542CE7002EFD33 /* DispatchQueue+Alamofire.swift in Sources */,
 				5C08C9E71E487E1A008B957D /* ViewCell3.swift in Sources */,
 				5C0349C11E52D84500C990DB /* WebViewController.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
 				5C08C9FB1E489A85008B957D /* DetailViewController.swift in Sources */,
-				5C44B89A1E542CE7002EFD33 /* SessionManager.swift in Sources */,
 				5C28A47A1E444EB300152411 /* SixthViewController.swift in Sources */,
 				5C44B8211E54203D002EFD33 /* SwiftyJSON.swift in Sources */,
 				5C8F47841E4076F7004551DB /* TabViewController1.swift in Sources */,
 				5C557BF71E38B7CB00EA4690 /* ThirdViewController.swift in Sources */,
-				5C44B88B1E542CE7002EFD33 /* AFError.swift in Sources */,
 				5C08C9F71E489882008B957D /* ViewCell4.swift in Sources */,
-				5C44B8941E542CE7002EFD33 /* Request.swift in Sources */,
-				5C44B8981E542CE7002EFD33 /* ServerTrustPolicy.swift in Sources */,
-				5C44B8971E542CE7002EFD33 /* Result.swift in Sources */,
 				5C08C9F11E4896E1008B957D /* MasterViewController.swift in Sources */,
-				5C44B89C1E542CE7002EFD33 /* Timeline.swift in Sources */,
 				5C44B8241E542232002EFD33 /* AlamJsonController.swift in Sources */,
 				5C0349BE1E52CC6100C990DB /* ShareData.swift in Sources */,
 				5C8F47791E4054A7004551DB /* ViewCell1.swift in Sources */,
 				5C77E42B1E5174DF00E06DF2 /* CoreDataViewController.swift in Sources */,
 				5C4A62A81E388F3B000B36C3 /* AppDelegate.swift in Sources */,
-				5C44B8921E542CE7002EFD33 /* Notifications.swift in Sources */,
-				5C44B8A11E546289002EFD33 /* Station.swift in Sources */,
 				5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */,
-				5C44B8961E542CE7002EFD33 /* ResponseSerialization.swift in Sources */,
-				5C44B8991E542CE7002EFD33 /* SessionDelegate.swift in Sources */,
 				5C77E42E1E51767B00E06DF2 /* CoreDataConnection.swift in Sources */,
 				5C08C9E21E487C01008B957D /* ViewCell2.swift in Sources */,
 			);
