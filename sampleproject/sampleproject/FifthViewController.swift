@@ -66,8 +66,13 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
             let tab11 = LazyViewController()
             tab11.tabBarItem = UITabBarItem(title: "Lazy",image:nil,tag: 11)
             
-            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8,tab9,tab10,tab11]
+            let tab12 = CacheController()
+            tab12.tabBarItem = UITabBarItem(title: "Cache",image:nil,tag: 12)
+            
+            self.viewControllers = [tabOne ,tabTwo, tabThree, tabFour,tabFive,tabSix,tab7,tab8,tab9,tab10,tab11,tab12]
         }
+    
+    
         
         // UITabBarControllerDelegate method
         func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

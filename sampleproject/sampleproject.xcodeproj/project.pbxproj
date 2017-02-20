@@ -82,12 +82,13 @@
 		5CDEA8441E5ACFD90018CAD1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDEA8311E5ACFD90018CAD1 /* TaskDelegate.swift */; };
 		5CDEA8451E5ACFD90018CAD1 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDEA8321E5ACFD90018CAD1 /* Timeline.swift */; };
 		5CDEA8461E5ACFD90018CAD1 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDEA8331E5ACFD90018CAD1 /* Validation.swift */; };
-		5CDEA8491E5AD02C0018CAD1 /* LazyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDEA8471E5AD02C0018CAD1 /* LazyController.swift */; };
-		5CDEA84A1E5AD02C0018CAD1 /* LazyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDEA8481E5AD02C0018CAD1 /* LazyController.xib */; };
 		5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */; };
 		5CE400461E4C2F2200AE4D8C /* SeventhViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */; };
 		5CE7D2151E56FEAC00B641C0 /* LazyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7D2131E56FEAC00B641C0 /* LazyViewController.swift */; };
 		5CE7D2161E56FEAC00B641C0 /* LazyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE7D2141E56FEAC00B641C0 /* LazyViewController.xib */; };
+		5CEE20731E5AF43F00B3BA3E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20721E5AF43F00B3BA3E /* placeholder.png */; };
+		5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE20741E5AF6A800B3BA3E /* CacheController.swift */; };
+		5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20751E5AF6A800B3BA3E /* CacheController.xib */; };
 		5CF408461E55BDE900AD4FFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF408451E55BDE900AD4FFB /* Info.plist */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
@@ -192,12 +193,13 @@
 		5CDEA8311E5ACFD90018CAD1 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		5CDEA8321E5ACFD90018CAD1 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		5CDEA8331E5ACFD90018CAD1 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		5CDEA8471E5AD02C0018CAD1 /* LazyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyController.swift; sourceTree = "<group>"; };
-		5CDEA8481E5AD02C0018CAD1 /* LazyController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LazyController.xib; sourceTree = "<group>"; };
 		5CE400431E4C2F2200AE4D8C /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 		5CE400441E4C2F2200AE4D8C /* SeventhViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeventhViewController.xib; sourceTree = "<group>"; };
 		5CE7D2131E56FEAC00B641C0 /* LazyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyViewController.swift; sourceTree = "<group>"; };
 		5CE7D2141E56FEAC00B641C0 /* LazyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LazyViewController.xib; sourceTree = "<group>"; };
+		5CEE20721E5AF43F00B3BA3E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = "../../../../Downloads/ImagesDownloadAndCache 2/ImagesDownloadAndCache/placeholder.png"; sourceTree = "<group>"; };
+		5CEE20741E5AF6A800B3BA3E /* CacheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheController.swift; sourceTree = "<group>"; };
+		5CEE20751E5AF6A800B3BA3E /* CacheController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheController.xib; sourceTree = "<group>"; };
 		5CF408451E55BDE900AD4FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFC00F41E4B3B3F00DAB510 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		5CFC00F51E4B3B3F00DAB510 /* Animation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animation.xib; sourceTree = "<group>"; };
@@ -289,8 +291,9 @@
 				5C44B8231E542232002EFD33 /* AlamJsonController.xib */,
 				5CE7D2131E56FEAC00B641C0 /* LazyViewController.swift */,
 				5CE7D2141E56FEAC00B641C0 /* LazyViewController.xib */,
-				5CDEA8471E5AD02C0018CAD1 /* LazyController.swift */,
-				5CDEA8481E5AD02C0018CAD1 /* LazyController.xib */,
+				5CEE20721E5AF43F00B3BA3E /* placeholder.png */,
+				5CEE20741E5AF6A800B3BA3E /* CacheController.swift */,
+				5CEE20751E5AF6A800B3BA3E /* CacheController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -535,7 +538,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDEA84A1E5AD02C0018CAD1 /* LazyController.xib in Resources */,
 				5CA03A7B1E3F3FAE00755207 /* ViewCell.xib in Resources */,
 				5C4A62D61E3891DD000B36C3 /* View.xib in Resources */,
 				5C44B8251E542232002EFD33 /* AlamJsonController.xib in Resources */,
@@ -552,8 +554,10 @@
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */,
 				5C8F477A1E4054A7004551DB /* ViewCell1.xib in Resources */,
+				5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */,
 				5C8F477C1E405752004551DB /* 1.json in Resources */,
 				5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */,
+				5CEE20731E5AF43F00B3BA3E /* placeholder.png in Resources */,
 				5C08C9FC1E489A85008B957D /* DetailViewController.xib in Resources */,
 				5C8F47891E407707004551DB /* TabViewController2.xib in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
@@ -600,7 +604,6 @@
 				5CA03A7A1E3F3FAE00755207 /* ViewCell.swift in Sources */,
 				5CDEA8411E5ACFD90018CAD1 /* ServerTrustPolicy.swift in Sources */,
 				5CD74A1E1E3CC739003C68C1 /* CollectionViewCell.swift in Sources */,
-				5CDEA8491E5AD02C0018CAD1 /* LazyController.swift in Sources */,
 				5CE400451E4C2F2200AE4D8C /* SeventhViewController.swift in Sources */,
 				5CDEA8401E5ACFD90018CAD1 /* Result.swift in Sources */,
 				5C557BF31E38B59100EA4690 /* SecondViewController.swift in Sources */,
@@ -617,6 +620,7 @@
 				5CDEA8451E5ACFD90018CAD1 /* Timeline.swift in Sources */,
 				5C28A47A1E444EB300152411 /* SixthViewController.swift in Sources */,
 				5CDEA8441E5ACFD90018CAD1 /* TaskDelegate.swift in Sources */,
+				5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */,
 				5C44B8211E54203D002EFD33 /* SwiftyJSON.swift in Sources */,
 				5CDEA83C1E5ACFD90018CAD1 /* ParameterEncoding.swift in Sources */,
 				5C8F47841E4076F7004551DB /* TabViewController1.swift in Sources */,
