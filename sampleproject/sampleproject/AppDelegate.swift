@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         
         // IQKeyboardManager.sharedManager().enable = true
-        let rootVC = ViewController()
+        let rootVC = QRController()
         let nav = UINavigationController(rootViewController: rootVC)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
