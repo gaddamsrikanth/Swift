@@ -72,7 +72,6 @@
 		5CEE20731E5AF43F00B3BA3E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20721E5AF43F00B3BA3E /* placeholder.png */; };
 		5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE20741E5AF6A800B3BA3E /* CacheController.swift */; };
 		5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20751E5AF6A800B3BA3E /* CacheController.xib */; };
-		5CF408461E55BDE900AD4FFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF408451E55BDE900AD4FFB /* Info.plist */; };
 		5CF636211E5C2C8F007C9D78 /* fruits.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF636201E5C2C8F007C9D78 /* fruits.png */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
@@ -220,8 +219,8 @@
 			children = (
 				5C44B8201E54203D002EFD33 /* SwiftyJSON.swift */,
 				5C28A4781E444EB300152411 /* SixthViewController.swift */,
-				5CF636201E5C2C8F007C9D78 /* fruits.png */,
 				5C28A4791E444EB300152411 /* SixthViewController.xib */,
+				5CF636201E5C2C8F007C9D78 /* fruits.png */,
 				5C557BF11E38B59100EA4690 /* SecondViewController.swift */,
 				5C557BF21E38B59100EA4690 /* SecondViewController.xib */,
 				5C557BF51E38B7CB00EA4690 /* ThirdViewController.swift */,
@@ -515,7 +514,6 @@
 				5C77E42C1E5174DF00E06DF2 /* CoreDataViewController.xib in Resources */,
 				5C8F47851E4076F7004551DB /* TabViewController1.xib in Resources */,
 				5C557BF41E38B59100EA4690 /* SecondViewController.xib in Resources */,
-				5CF408461E55BDE900AD4FFB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

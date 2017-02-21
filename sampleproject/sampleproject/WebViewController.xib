@@ -33,14 +33,14 @@
                         <navigationItem id="WDT-xf-ZtG">
                             <nil key="title"/>
                             <leftBarButtonItems>
-                                <barButtonItem style="plain" id="JKV-0S-H5o">
+                                <barButtonItem  id="JKV-0S-H5o">
                                     <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="re9-AN-u0D">
                                         <rect key="frame" x="16" y="7" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="&lt;"/>
                                     </button>
                                 </barButtonItem>
-                                <barButtonItem style="plain" systemItem="refresh" id="zAa-gC-luH">
+                                <barButtonItem  systemItem="refresh" id="zAa-gC-luH">
                                     <connections>
                                         <action selector="refresh:" destination="-1" id="XMy-iR-rBk"/>
                                     </connections>
@@ -54,14 +54,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <rightBarButtonItems>
-                                <barButtonItem style="plain" id="06Y-Yh-2iX">
+                                <barButtonItem  id="06Y-Yh-2iX">
                                     <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dad-56-fn1">
                                         <rect key="frame" x="309" y="7" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="&gt;"/>
                                     </button>
                                 </barButtonItem>
-                                <barButtonItem style="plain" systemItem="cancel" id="sJC-ZA-oBC">
+                                <barButtonItem  systemItem="cancel" id="sJC-ZA-oBC">
                                     <connections>
                                         <action selector="cncl:" destination="-1" id="IKC-PX-A0Y"/>
                                     </connections>

@@ -33,7 +33,7 @@ class QRController: UIViewController {
             content.subtitle = "From MakeAppPie.com"
             content.body = "Notification after 10 seconds - Your pizza is Ready!!"
             content.categoryIdentifier = "message"
-            
+            content.setValue(true, forKey: "shouldAlwaysAlertWhileAppIsForeground")
             let imageName = "fruits"
             guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
             print(imageURL)
