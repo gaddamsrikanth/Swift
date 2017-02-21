@@ -73,6 +73,8 @@
 		5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE20741E5AF6A800B3BA3E /* CacheController.swift */; };
 		5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20751E5AF6A800B3BA3E /* CacheController.xib */; };
 		5CF636211E5C2C8F007C9D78 /* fruits.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF636201E5C2C8F007C9D78 /* fruits.png */; };
+		5CF6362D1E5C5AE0007C9D78 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6362B1E5C5AE0007C9D78 /* Controller.swift */; };
+		5CF6362E1E5C5AE0007C9D78 /* Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF6362C1E5C5AE0007C9D78 /* Controller.xib */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
 /* End PBXBuildFile section */
@@ -167,6 +169,8 @@
 		5CEE20751E5AF6A800B3BA3E /* CacheController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheController.xib; sourceTree = "<group>"; };
 		5CF408451E55BDE900AD4FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CF636201E5C2C8F007C9D78 /* fruits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fruits.png; path = ../../../fruits.png; sourceTree = "<group>"; };
+		5CF6362B1E5C5AE0007C9D78 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		5CF6362C1E5C5AE0007C9D78 /* Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Controller.xib; sourceTree = "<group>"; };
 		5CFC00F41E4B3B3F00DAB510 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		5CFC00F51E4B3B3F00DAB510 /* Animation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animation.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +266,8 @@
 				5CEE20741E5AF6A800B3BA3E /* CacheController.swift */,
 				5CEE20751E5AF6A800B3BA3E /* CacheController.xib */,
 				5CC866EA1E5C19170043F1E8 /* QRController.swift */,
+				5CF6362B1E5C5AE0007C9D78 /* Controller.swift */,
+				5CF6362C1E5C5AE0007C9D78 /* Controller.xib */,
 				5CC866EB1E5C19170043F1E8 /* QRController.xib */,
 			);
 			name = Controllers;
@@ -502,6 +508,7 @@
 				5C08C9FC1E489A85008B957D /* DetailViewController.xib in Resources */,
 				5C8F47891E407707004551DB /* TabViewController2.xib in Resources */,
 				5C4A62AF1E388F3B000B36C3 /* Assets.xcassets in Resources */,
+				5CF6362E1E5C5AE0007C9D78 /* Controller.xib in Resources */,
 				5C08C9D11E48503C008B957D /* SampleViewController.xib in Resources */,
 				5C08C9E31E487C01008B957D /* ViewCell2.xib in Resources */,
 				5C08C9EA1E48839D008B957D /* ViewCell3.xib in Resources */,
@@ -553,6 +560,7 @@
 				5C0349C11E52D84500C990DB /* WebViewController.swift in Sources */,
 				5C4A62AA1E388F3B000B36C3 /* ViewController.swift in Sources */,
 				5C08C9FB1E489A85008B957D /* DetailViewController.swift in Sources */,
+				5CF6362D1E5C5AE0007C9D78 /* Controller.swift in Sources */,
 				5C28A47A1E444EB300152411 /* SixthViewController.swift in Sources */,
 				5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */,
 				5C44B8211E54203D002EFD33 /* SwiftyJSON.swift in Sources */,
