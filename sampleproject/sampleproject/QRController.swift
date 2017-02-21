@@ -34,9 +34,17 @@ class QRController: UIViewController {
             content.body = "Notification after 10 seconds - Your pizza is Ready!!"
             content.categoryIdentifier = "message"
             
+            let imageName = "fruits"
+            guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
+            print(imageURL)
+            print("ABCD")
+            let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
+            
+            content.attachments = [attachment]
+            
             let trigger = UNTimeIntervalNotificationTrigger(
-                timeInterval : 60.0,
-                repeats : true
+                timeInterval : 6.0,
+                repeats : false
             )
             
             let request = UNNotificationRequest(
@@ -45,7 +53,7 @@ class QRController: UIViewController {
                 trigger : trigger
             )
             
-            UNUserNotificationCenter.current().add(request)
+            UNUserNotificationCenter.current().add(request,withCompletionHandler: nil)
         }
     }
 

@@ -73,6 +73,7 @@
 		5CEE20761E5AF6A800B3BA3E /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE20741E5AF6A800B3BA3E /* CacheController.swift */; };
 		5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE20751E5AF6A800B3BA3E /* CacheController.xib */; };
 		5CF408461E55BDE900AD4FFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF408451E55BDE900AD4FFB /* Info.plist */; };
+		5CF636211E5C2C8F007C9D78 /* fruits.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF636201E5C2C8F007C9D78 /* fruits.png */; };
 		5CFC00F61E4B3B3F00DAB510 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC00F41E4B3B3F00DAB510 /* Animation.swift */; };
 		5CFC00F71E4B3B3F00DAB510 /* Animation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC00F51E4B3B3F00DAB510 /* Animation.xib */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		5CEE20741E5AF6A800B3BA3E /* CacheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheController.swift; sourceTree = "<group>"; };
 		5CEE20751E5AF6A800B3BA3E /* CacheController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheController.xib; sourceTree = "<group>"; };
 		5CF408451E55BDE900AD4FFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF636201E5C2C8F007C9D78 /* fruits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fruits.png; path = ../../../fruits.png; sourceTree = "<group>"; };
 		5CFC00F41E4B3B3F00DAB510 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		5CFC00F51E4B3B3F00DAB510 /* Animation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animation.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 			children = (
 				5C44B8201E54203D002EFD33 /* SwiftyJSON.swift */,
 				5C28A4781E444EB300152411 /* SixthViewController.swift */,
+				5CF636201E5C2C8F007C9D78 /* fruits.png */,
 				5C28A4791E444EB300152411 /* SixthViewController.xib */,
 				5C557BF11E38B59100EA4690 /* SecondViewController.swift */,
 				5C557BF21E38B59100EA4690 /* SecondViewController.xib */,
@@ -491,6 +494,7 @@
 				5C4A62B21E388F3B000B36C3 /* LaunchScreen.storyboard in Resources */,
 				5C557BF81E38B7CB00EA4690 /* ThirdViewController.xib in Resources */,
 				5C28A47B1E444EB300152411 /* SixthViewController.xib in Resources */,
+				5CF636211E5C2C8F007C9D78 /* fruits.png in Resources */,
 				5C8F477A1E4054A7004551DB /* ViewCell1.xib in Resources */,
 				5CEE20771E5AF6A800B3BA3E /* CacheController.xib in Resources */,
 				5C8F477C1E405752004551DB /* 1.json in Resources */,
