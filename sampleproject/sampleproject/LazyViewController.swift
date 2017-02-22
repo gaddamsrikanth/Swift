@@ -10,17 +10,18 @@ import UIKit
 
 class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var TableData:Array< String > = Array < String >()
-
+    
     var pageNo: Int = 0
     var totalPages: Int = 0
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         self.navigationController?.isNavigationBarHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ViewCell4",bundle: nil), forCellReuseIdentifier: "ViewCell4")
-        //send_req("http://127.0.0.1:8085/req")
         get_data_from_url("http://127.0.0.1:8085/mongoose/fetch/" + String(describing: pageNo))
 
     }
@@ -38,6 +39,7 @@ class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell4", for: indexPath) as! ViewCell4
         if indexPath.row == (self.TableData.count - 1) {
             self.pageNo += 1
@@ -45,58 +47,44 @@ class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 self.get_data_from_url("http://127.0.0.1:8085/mongoose/fetch/" + String(describing: pageNo))
         }
         
-//        let category = self.TableData[indexPath.row]
         cell.lbl1.text = TableData[indexPath.row]
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        
-//        print("Send Data Req")
-//        if(TableData[indexPath.row] != "")
-//        {
-//            get_data_from_url("http://127.0.0.1:8085/mongoose/fetch")
-//        }
-//        
-//
-//        
-//    }
-    
-    
-//    func send_req(_ link:String){
-//        let parameters = ["name":"Abhishek1", "password":"Master1"] as Dictionary<String, String>
-//        let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
-//        
-//        let session = URLSession.shared
-//        request.httpMethod = "POST"
-//        
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue("application/json", forHTTPHeaderField: "Accept")
-//        
-//        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
-//        
-//        let task = session.dataTask(with: request as URLRequest) { data, response, error in
-//            guard data != nil else {
-//                print("no data found: \(error)")
-//                return
-//            }
-//            
-//            do {
-//                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-//                    print("Response: \(json)")
-//                } else {
-//                    let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//                    print("Error could not parse JSON: \(jsonStr)")
-//                }
-//            } catch let parseError {
-//                print(parseError)
-//                let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//                print("Error could not parse JSON: '\(jsonStr)'")
-//            }
-//        }
-//        tableView.reloadData()
-//        task.resume()
-//    }
+
+    func send_req(_ link:String){
+        let parameters = ["name":"Abhishek1", "password":"Master1"] as Dictionary<String, String>
+        let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+        
+        let session = URLSession.shared
+        request.httpMethod = "POST"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            guard data != nil else {
+                print("no data found: \(error)")
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    print("Response: \(json)")
+                } else {
+                    let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    print("Error could not parse JSON: \(jsonStr)")
+                }
+            } catch let parseError {
+                print(parseError)
+                let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                print("Error could not parse JSON: '\(jsonStr)'")
+            }
+        }
+        tableView.reloadData()
+        task.resume()
+    }
     
     func get_data_from_url(_ link:String)
     {

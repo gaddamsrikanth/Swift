@@ -10,6 +10,7 @@ import UIKit
 
 class CacheController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    var indicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
     var refreshCtrl: UIRefreshControl!
     var tableData:[AnyObject]!
@@ -20,11 +21,19 @@ class CacheController: UIViewController, UITableViewDataSource,UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        indicator.frame = CGRect(x:0.0, y:0.0, width:40.0,height: 40.0);
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
         session = URLSession.shared
         task = URLSessionDownloadTask()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ViewCell1",bundle:nil), forCellReuseIdentifier: "ViewCell1")
+
         refreshTableView()
         
         self.tableData = []
@@ -33,7 +42,7 @@ class CacheController: UIViewController, UITableViewDataSource,UITableViewDelega
     }
     
     func refreshTableView(){
-        
+        indicator.startAnimating()
         let url:URL! = URL(string: "https://itunes.apple.com/search?term=gta&entity=software")
         task = session.downloadTask(with: url, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
             
@@ -50,6 +59,7 @@ class CacheController: UIViewController, UITableViewDataSource,UITableViewDelega
                 }
             }
         })
+        
         task.resume()
     }
     
@@ -71,7 +81,6 @@ class CacheController: UIViewController, UITableViewDataSource,UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 1
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell1", for: indexPath) as! ViewCell1
         let dictionary = self.tableData[(indexPath as NSIndexPath).row] as! [String:AnyObject]
         cell.label1.text = dictionary["trackName"] as? String
@@ -100,10 +109,14 @@ class CacheController: UIViewController, UITableViewDataSource,UITableViewDelega
                     })
                 }
             })
+            indicator.stopAnimating()
             task.resume()
         }
+        
         return cell
     }
 
 
 }
+
+
