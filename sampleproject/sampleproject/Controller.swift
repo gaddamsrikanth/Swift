@@ -7,35 +7,50 @@
 //
 
 import UIKit
+import MediaPlayer
 import AVKit
 import AVFoundation
-import MediaPlayer
 
-
-class Controller: UIViewController {
+class Controller: UIViewController,UIGestureRecognizerDelegate {
     
     var moviePlayer : MPMoviePlayerViewController?
+    var videoURL : NSURL!
+    let playerViewController = AVPlayerViewController()
+    var player : AVPlayer!
+    var url : NSURL!
 
-    
         override func viewDidLoad() {
                 super.viewDidLoad()
             
-            let url = NSURL(fileURLWithPath: "/Users/itilak/Library/Developer/CoreSimulator/Devices/7AAB1D1A-0B74-45F7-B788-46B5889AEA8C/data/Media/DCIM/100APPLE/IMG_0009.MP4")
+             url = NSURL(fileURLWithPath: "/Users/itilak/Library/Developer/CoreSimulator/Devices/028480F2-879E-487C-BDAC-52790BA87828/data/Containers/Data/Application/5FE220C6-4659-4B93-A63E-F333EEB19905/Library/Caches/al/1461134316_570x320_low_quality.mp4")
             
-            let videoURL = url
-            moviePlayer = MPMoviePlayerViewController(contentURL: videoURL as URL! )
+            player = AVPlayer(url: url as URL)
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                self.playerViewController.player!.play()
+            }
             
-            if let player = moviePlayer {
-                player.view.frame = self.view.bounds
-                self.present(moviePlayer!, animated: true, completion: nil)
-            }
-            else {
-                NSLog("no player")
-            }
-//                let deadlineTime = DispatchTime.now() + .seconds(10)
-//                DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-                self.generateThumnail(url: videoURL, fromTime: 1)
-//            }
+            let singleFingerTap = UITapGestureRecognizer(target: self, action: #selector(self.ss))
+            singleFingerTap.delegate = self
+            self.playerViewController.view.subviews[0].addGestureRecognizer(singleFingerTap)
+
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        return true
+        
+    }
+
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer touch: UITouch) -> Bool {
+        
+        return true
+    }
+    
+    func ss(){
+       let floatTime = Float(CMTimeGetSeconds(player.currentTime()))
+        generateThumnail(url: url
+            , fromTime: Float64(floatTime))
     }
     
     func generateThumnail(url : NSURL, fromTime:Float64) -> UIImage {
@@ -52,7 +67,7 @@ class Controller: UIViewController {
             print("abcd")
             UIGraphicsBeginImageContextWithOptions(self.view.frame.size, true, 0.0)
             self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
-            let image = UIGraphicsGetImageFromCurrentImageContext()
+            _ = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
         }
