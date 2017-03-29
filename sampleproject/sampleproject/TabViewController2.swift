@@ -65,7 +65,6 @@ class TabViewController2: UIViewController,CLLocationManagerDelegate, MKMapViewD
         directionsRequest.transportType = MKDirectionsTransportType.automobile
             
         let directions = MKDirections(request: directionsRequest)
-        
         directions.calculate(completionHandler: {
             response, error in
             if error == nil {

@@ -107,6 +107,7 @@ class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func extract_json(_ data: Data)
     {
+        
         let json: Any?
         do
         {
@@ -116,6 +117,7 @@ class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         {
             return
         }
+        print()
         guard let data_list = json as? NSArray else
         {
             return
